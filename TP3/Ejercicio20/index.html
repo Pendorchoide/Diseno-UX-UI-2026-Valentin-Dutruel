@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 20</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body data-theme="dark">
+    <div class="layout">
+        <header class="main-header">
+            <div class="logo-container">
+                <a href="#">
+                    <img src="./assets/logo.png" alt="Logo" class="logo-img">
+                </a>
+            </div>
+            <input class="menu-toggle" type="checkbox" id="menu-toggle">
+            <label class="menu-toggle-label" for="menu-toggle" aria-label="Boton Hamburguesa">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#hero">Blog</a></li>
+                    <li class="nav-item"><a href="#products">Merchandise</a></li>
+                    <li class="nav-item"><a href="#gallery">Juegos</a></li>
+                    <li class="nav-item"><a href="#site-footer">Sobre nosotros</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <aside class="sidebar">
+            <ul>
+                <li><input class="sidebar-search" type="text" placeholder="Buscar..."></li>
+                <hr>
+                <li><a class="sidebar-item" href="#products">Nuestros Productos</a></li>
+                <hr>
+                <li><a class="sidebar-item" href="#products">Ofertas</a></li>
+                <hr>
+                <li><a class="sidebar-item" href="#hero">Novedades</a></li>
+                <hr>
+                <li><a class="sidebar-item" href="#hero">Planes</a></li>
+                <hr>
+            </ul>
+        </aside>
+        
+        <main id="main" class="main-container">
+            <section class="hero" id="hero">
+                <h1 class="hero-title">Sea of Sorrow</h1>
+                <h2 class="hero-subtitle"><strong>Silksong DLC</strong> proximamente ...</h2>
+
+            </section>
+            <hr>
+            <section class="product-section" aria-label="Productos" id="products">
+                <h2 id="gallery-title" class="secondary-title">Nuestros Productos</h2>
+                <div class="product-card">
+                    <a href="">
+                        <img src="./assets/remera-1.png" alt="remera-1">
+                    </a>
+                    <div class="product-details-container">
+                        <div class="product-title-container">
+                            <p class="product-title">Remera Radiance</p>
+                        </div>
+                        <div class="product-sub-details-container">
+                            <p class="product-price">$150.00</p>
+                            <button type="button" class="product-detail-button">ver detalle</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <a href="">
+                        <img src="./assets/remera-2.png" alt="remera-2">
+                    </a>
+                    <div class="product-details-container">
+                        <div class="product-title-container">
+                            <p class="product-title">Remera Knight</p>
+                        </div>
+                        <div class="product-sub-details-container">
+                            <p class="product-price">$100.00</p>
+                            <button type="button" class="product-detail-button">ver detalle</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <a href="">
+                        <img src="./assets/remera-3.png" alt="remera-3">
+                    </a>
+                    <div class="product-details-container">
+                        <div class="product-title-container">
+                            <p class="product-title">Remera Hornet</p>
+                        </div>
+                        <div class="product-sub-details-container">
+                            <p class="product-price">$100.00</p>
+                            <button type="button" class="product-detail-button">ver detalle</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <a href="">
+                        <img src="./assets/pin-1.png" alt="pin-1">
+                    </a>
+                    <div class="product-details-container">
+                        <div class="product-title-container">
+                            <p class="product-title">Pin Knight</p>
+                        </div>
+                        <div class="product-sub-details-container">
+                            <p class="product-price">$20.00</p>
+                            <button type="button" class="product-detail-button">ver detalle</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <a href="">
+                        <img src="./assets/llavero-1.png" alt="llavero-1">
+                    </a>
+                    <div class="product-details-container">
+                        <div class="product-title-container">
+                            <p class="product-title">Llavero aguijón roto</p>
+                        </div>
+                        <div class="product-sub-details-container">
+                            <p class="product-price">$50.00</p>
+                            <button type="button" class="product-detail-button">ver detalle</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <a href="">
+                        <img src="./assets/llavero-2.png" alt="llavero-2">
+                    </a>
+                    <div class="product-details-container">
+                        <div class="product-title-container">
+                            <p class="product-title">Llavero aguijón puro</p>
+                        </div>
+                        <div class="product-sub-details-container">
+                            <p class="product-price">$50.00</p>
+                            <button type="button" class="product-detail-button">ver detalle</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section id="gallery" class="image-gallerie-container" aria-labelledby="gallery-title">
+                <h2 id="gallery-title" class="secondary-title">Capturas de Pantalla</h2>
+                <div class="image-gallerie">
+                    <div class="image-card image-card-2x2">
+                        <img src="./assets/HK-banner-img.png" alt="ciudad-de-lagrimas">
+                    </div>
+                    <div class="image-card">
+                        <img src="./assets/hornet-img.png" alt="ciudad-de-lagrimas">
+                    </div>
+                    <div class="image-card">
+                        <img src="./assets/silksong-2-img.png" alt="ciudad-de-lagrimas">
+                    </div>
+                    <div class="image-card">
+                        <img src="./assets/knight-img.png" alt="ciudad-de-lagrimas">
+                    </div>
+                    <div class="image-card">
+                        <img src="./assets/silksong-img.png" alt="ciudad-de-lagrimas">
+                    </div>
+                    <div class="image-card image-card-1x2">
+                        <img src="./assets/silksong-3-img.png" alt="ciudad-de-lagrimas">
+                    </div>
+                    <div class="image-card image-card-1x2">
+                        <img src="./assets/ciudad-lagrimas-img.png" alt="ciudad-de-lagrimas">
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section id="testimonials" class="testimonials-container" aria-labelledby="testimonials-title">
+                <h2 id="testimonials-title" class="secondary-title">Lo que dice la Critica</h2>
+
+                <div class="testimonials-track">
+                    <a href="#testimonial-1" class="testimonial-card" aria-label="Testimonio 1">
+                        <blockquote id="testimonial-1">
+                            <cite class="testimonial-text">“It's a deep dive into a dark place, and a brilliantly rich experience.”</cite>
+                                <div class="testimonial-meta">
+                                    <cite class="testimonial-score">9/10</cite>
+                                    <cite class="testimonial-author">– Game Informer</cite>
+                                </div>
+                        </blockquote>
+                    </a>
+                    <a href="#testimonial-2" class="testimonial-card" aria-label="Testimonio 2">
+                        <blockquote id="testimonial-2">
+                            <cite class="testimonial-text">“Truly a masterpiece of gaming if there ever was one, and certainly art worthy of being in a museum.”</cite>
+                                <div class="testimonial-meta">
+                                    <cite class="testimonial-score">10/10</cite>
+                                    <cite class="testimonial-author">– Destructoid</cite>
+                                </div>
+                        </blockquote>
+                    </a>
+                    <a href="#testimonial-3" class="testimonial-card" aria-label="Testimonio 3">
+                        <blockquote id="testimonial-3" >
+                            <cite class="testimonial-text">“Best Platformer 2017 - The joy of Hollow Knight is the joy of discovery, always hard-earned, never handed to you.”</cite>
+                                <div class="testimonial-meta">
+                                    <cite class="testimonial-score">92/100</cite>
+                                    <cite class="testimonial-author">– PC Gamer</cite>
+                                </div>
+                        </blockquote>
+                    </a>
+                    <a href="#testimonial-4" class="testimonial-card" aria-label="Testimonio 4">
+                        <blockquote id="testimonial-4">
+                            <cite class="testimonial-text">“Hollow Knight: Silksong is packed full of sharp platforming, enticing exploration, and nail-biting combat that's all unapologetically challenging in just the right way.”</cite>
+                                <div class="testimonial-meta">
+                                    <cite class="testimonial-score">9/10</cite>
+                                    <cite class="testimonial-author">– IGN</cite>
+                                </div>
+                        </blockquote>
+                    </a>
+                </div>
+
+                <div class="testimonials-dots">
+                    <a href="#testimonial-1" class="dot" aria-label="Testimonio 1"></a>
+                    <a href="#testimonial-2" class="dot" aria-label="Testimonio 2"></a>
+                    <a href="#testimonial-3" class="dot" aria-label="Testimonio 3"></a>
+                    <a href="#testimonial-4" class="dot" aria-label="Testimonio 4"></a>
+                </div>
+            </section>
+            <hr>
+            <section class="contact-form" id="contact-form">
+                <h2 id="form-title" class="secondary-title">¡Contactanos!</h2>
+                <form action="">
+                    <div class="input-area">
+                        <label for="name">Ingrese su nombre:</label>
+                        <input class="input-box" type="text" name="name" id="name" placeholder="Su nombre" required>
+                    </div>
+            
+                    <div class="input-area">
+                        <label for="email">Ingrese su e-mail:</label>
+                        <input class="input-box" type="email" name="email" id="email" placeholder="Su e-mail" required>
+                    </div>
+            
+                    <div class="input-area">
+                        <label for="message">Ingrese su mensaje:</label>
+                        <textarea id="message" name="message" rows="5" cols="30" placeholder="..." required></textarea>
+                    </div>
+            
+                    <div>
+                        <input type="submit" value="Enviar" id="send-button" name="enviar">
+                    </div>
+                </form>
+            </section>
+            <div class="load-icon-container">
+                <!-- svg inline para poder cambiarle el color -->
+                <svg class="load-icon" viewBox="0 -960 960 960" role="img" aria-label="Cargando">
+                                    <path d="M325-111.5q-73-31.5-127.5-86t-86-127.5Q80-398 80-480.5t31.5-155q31.5-72.5 86-127t127.5-86Q398-880 480-880q17 0 28.5 11.5T520-840q0 17-11.5 28.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160q133 0 226.5-93.5T800-480q0-17 11.5-28.5T840-520q17 0 28.5 11.5T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480.5-80Q398-80 325-111.5Z" />
+                </svg>
+            </div>
+            <div id="home-container">
+                <a id="home-icon" href="#" aria-label="Volver arriba">
+                    <img src="./assets/home-icon.svg" alt="home-icon">
+                    <span class="tooltip">Volver arriba</span>
+                </a>
+            </div>
+        </main>
+        
+        <footer id="site-footer">
+            <div id="left-footer">
+                <p>Team Cherry is a small indie games team in Adelaide, South Australia.</p> <br>
+                <p>Our mission is to build crazy and exciting worlds for you to explore and conquer.</p><br>
+                <p>Copyright © 2026 Equipo Cereza</p>
+            </div>
+            <div id="right-footer">
+                <p><a href="#hero">Blog</a> | <a href="#products">Merchandise</a> | <a href="#gallery">Juegos</a> | <a href="#site-footer">Sobre nosotros</a></p><br>
+                <p><a href="#">FAQ</a> | <a href="#contact-form">Contactanos</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

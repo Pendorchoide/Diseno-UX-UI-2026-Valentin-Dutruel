@@ -1,0 +1,35 @@
+/* BODY */
+body{
+    background-color: antiquewhite;
+}
+
+/* TITLE */
+.title{
+    color: rgb(39, 47, 101);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
+}
+
+/* HEADINGS */
+h1{
+    
+    font-size: 2rem;
+}   
+
+h3{
+    font-size: 1.5rem;
+}
+
+/* MATH SYMBOLS */
+span.math-symbols{
+    font-weight: bold;
+}
+
+/* IMAGES */
+div img{
+    border: 2px solid black;
+    border-radius: 0.5rem;
+}
+
+#sine-img{
+    border-radius: 1rem;
+}

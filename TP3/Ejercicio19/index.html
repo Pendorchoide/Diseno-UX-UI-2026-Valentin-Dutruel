@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 19</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="layout">
+        <h1>¡Crear tu cuenta!</h1>
+
+        <input class="step-toggle" type="radio" name="step" id="step-one" checked>
+        <label class="step-tab" for="step-one">1. Datos personales</label>
+        <input class="step-toggle" type="radio" name="step" id="step-two">
+        <label class="step-tab" for="step-two">2. Seguridad</label>
+
+        <form action="">
+            <section class="form-step step-one" aria-labelledby="step-one-title">
+                <h2 id="step-one-title">Datos personales</h2>
+
+                <div class="input-area">
+                    <label for="name">Nombre completo</label>
+                    <input class="input-box" type="text" name="name" id="name" placeholder="Tu nombre" required minlength="3">
+                </div>
+
+                <div class="input-area">
+                    <label for="email">Correo electronico</label>
+                    <input class="input-box" type="email" name="email" id="email" placeholder="tu@email.com" required>
+                </div>
+
+                <div class="input-area">
+                    <label for="birth-date">Fecha de nacimiento</label>
+                    <input class="input-box" type="date" name="birth-date" id="birth-date" placeholder=" " required>
+                </div>
+
+                <label class="step-button" for="step-two">Continuar</label>
+            </section>
+
+            <section class="form-step step-two" aria-labelledby="step-two-title">
+                <h2 id="step-two-title">Seguridad</h2>
+
+                <div class="input-area">
+                    <label for="password">Contraseña</label>
+                    <input class="input-box" type="password" name="password" id="password" placeholder="Mínimo 8 caracteres" required minlength="8">
+                </div>
+
+                <div class="input-area">
+                    <label for="password-check">Contraseña</label>
+                    <input class="input-box" type="password-check" name="password-check" id="password-check" placeholder="Repite tu Contraseña" required minlength="8">
+                </div>
+
+
+                <div class="step-actions">
+                    <label class="step-button step-button--secondary" for="step-one">Volver</label>
+                    <button type="submit" id="send-button">Registrarme</button>
+                </div>
+            </section>
+        </form>
+    </div>
+    
+</body>
+</html>

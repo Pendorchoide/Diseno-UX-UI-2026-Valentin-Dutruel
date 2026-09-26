@@ -1,0 +1,12 @@
+/* BODY */
+body{
+    background-color: antiquewhite;
+}
+
+/* TITLE */
+h1{
+    color: rgb(87, 94, 142);
+    background-color: #fff;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+}   

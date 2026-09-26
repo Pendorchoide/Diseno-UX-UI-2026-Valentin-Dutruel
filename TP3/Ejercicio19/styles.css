@@ -1,0 +1,203 @@
+ :root{
+    --font-main: 'Roboto', sans-serif;
+    --color-background: #1b1c1e;
+    --color-text: #ffffff;
+    --color-primary: #d56262;
+    --color-primary-hover: #b94e4e;
+    --color-muted: #6f7276;
+    --color-success: #2e9b5f;
+    --color-error: #d64545;
+    --color-shadow: #000000;
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+}
+
+/* BODY */
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--color-background);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+/* FORM LAYOUT */
+.layout{
+    width: min(100%, 42rem);
+    margin: 0 auto;
+    padding: 5%;
+    color: var(--color-text);
+    font-family: var(--font-main);
+}
+
+/* FORM TITLE */
+h1{
+    width: 100%;
+    text-align: center;
+}
+
+/* FORM */
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* FORM FIELD */
+.input-area{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+/* TEXT INPUT */
+.input-box{
+    font-family: var(--font-main);
+    border: none;
+    border-radius: var(--radius-md);
+    height: 1.5rem;
+    width: 60%;
+    max-width: 15rem;
+    padding: 0 0.5rem;
+    outline: none;
+
+    transition: 0.3s ease;
+}
+
+.input-box:focus::placeholder{
+    opacity: 0;
+}
+
+
+/* MULTI-STEP FORM */
+.step-toggle{
+    position: absolute;
+    opacity: 0;
+}
+
+.step-tab{
+    display: inline-flex;
+    padding: 0.6rem 0.8rem;
+    border-bottom: 0.2rem solid transparent;
+    color: var(--color-muted);
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.step-toggle:checked + .step-tab{
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.form-step{
+    display: none;
+    gap: 1rem;
+    opacity: 0;
+    transform: translateY(0.5rem);
+}
+
+@keyframes step-in{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#step-one:checked ~ form .step-one,
+#step-two:checked ~ form .step-two{
+    display: grid;
+    animation: step-in 0.3s ease forwards;
+}
+
+.form-step h2{
+    color: var(--color-text);
+}
+
+.input-box{
+    width: 100%;
+    max-width: 15rem;
+    border: 0.15rem solid transparent;
+    box-sizing: border-box;
+}
+
+.input-box:required:valid{
+    border-color: var(--color-success);
+}
+
+.input-box:required:user-invalid,
+.input-box:required:focus:invalid{
+    border-color: var(--color-error);
+}
+
+/* BUTTONS */
+.step-button,
+#send-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    min-height: 2.5rem;
+    padding: 0.1rem 0.6rem;
+    border: 0;
+    border-radius: var(--radius-sm);
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    cursor: pointer;
+    font: inherit;
+    transition: background-color 0.2s ease, box-shadow 0.3s ease, transform 0.5s ease, color 0.3s ease;
+}
+
+/* STEP BUTTON*/
+.step-button:hover,
+#send-button:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 0.25rem var(--color-shadow);
+    background-color: var(--color-primary-hover);
+    cursor: pointer;
+
+}
+
+.step-button--secondary{
+    background-color: var(--color-muted);
+}
+
+
+/* SEND BUTTON*/
+#send-button:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 0.25rem var(--color-shadow);
+    color: var(--color-background);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.2s ease, color 0.3s ease;
+
+}
+
+#send-button:active{
+    transform: scale(0.95);
+}
+
+.step-actions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+@media (max-width: 35rem){
+    .step-tab{
+        padding-inline: 0.4rem;
+        font-size: 0.85rem;
+    }
+
+    .input-box,
+    textarea{
+        width: 100%;
+    }
+}

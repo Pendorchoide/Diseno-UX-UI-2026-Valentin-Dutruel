@@ -1,0 +1,107 @@
+/* BODY */
+body{
+    background-color:  #1b1c1e;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+/* FORM LAYOUT */
+.layout{
+    font-display: flex;
+    padding: 5%;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* FORM TITLE */
+h1{
+    text-align: center;
+}
+
+/* FORM */
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+/* FORM FIELD */
+.input-area{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+/* TEXT INPUT */
+.input-box{
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 0.5rem;
+    height: 1.5rem;
+    width: 60%;
+    max-width: 15rem;
+    padding: 0 0.5rem;
+    outline: none;
+
+    transition: 0.3s ease;
+}
+
+/* TEXTAREA */
+textarea{
+    font-family: 'Roboto', sans-serif;
+    resize: none;
+    border: none;
+    border-radius: 0.25rem;
+    width: 80%;
+    max-width: 30rem;
+    padding: 0.3rem 0.5rem;
+    outline: none;
+
+    transition: 0.3s ease;
+}
+
+textarea:focus, .input-box:focus {
+    outline: auto;
+    outline-style:solid;
+    outline-color: #d56262;
+}
+
+.input-box:focus::placeholder{
+    opacity: 0;
+}
+
+textarea:focus::placeholder{
+    opacity: 0;
+}
+
+/* SEND BUTTON*/
+#send-button{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-weight: 400;
+    background-color: #d56262;
+    color: white;
+
+    transition: box-shadow 0.3s ease, transform 0.5s ease, color 0.3s ease;
+}
+
+#send-button:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 0.25rem  rgb(0, 0, 0);
+    color:#1b1c1e;
+    font-weight: 500;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.2s ease, color 0.3s ease;
+
+}
+
+#send-button:active{
+    transform: scale(0.95);
+
+}
