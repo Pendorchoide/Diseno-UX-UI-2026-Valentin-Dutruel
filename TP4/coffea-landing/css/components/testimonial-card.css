@@ -1,0 +1,190 @@
+/* css/components/testimonial-card.css */
+
+/* Título de dos líneas: "Come and Join" + "OUR HAPPY CUSTOMERS" */
+.testimonials__title {
+  margin-bottom: var(--space-40);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-h2);
+  line-height: 1.25;
+  letter-spacing: var(--ls-h2);
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-espresso);
+}
+
+.testimonials__eyebrow {
+  display: block;
+  font-family: var(--font-accent);
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* Base (mobile): 1 card visible, scroll horizontal con snap */
+.testimonials__track {
+  --testimonials-gap: var(--space-16);
+  display: flex;
+  gap: var(--testimonials-gap);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.testimonials__track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card */
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: var(--space-28);
+  border: 2px solid var(--color-border-soft);
+  border-radius: var(--radius-card);
+  background-color: var(--color-sand-40);
+  scroll-snap-align: start;
+}
+
+/* En el HTML va primero el texto; visualmente va primero el autor */
+.testimonial-card__author {
+  order: -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.testimonial-card__avatar {
+  flex: none;
+  width: 3.5rem;                       /* 56 px */
+  height: 3.5rem;
+  border-radius: var(--radius-circle);
+  object-fit: cover;
+}
+
+.testimonial-card__name,
+.testimonial-card__role {
+  display: block;
+  font-family: var(--font-ui);
+}
+
+.testimonial-card__name {
+  font-weight: 600;
+  font-size: var(--fs-md);
+  color: var(--color-espresso);
+}
+
+.testimonial-card__role {
+  font-weight: 400;
+  font-size: var(--fs-sm);
+  color: var(--color-text-soft);
+}
+
+/* Rating: base y md en su propia línea; a la derecha solo en xl */
+.testimonial-card__rating {
+  display: flex;
+  flex: 0 0 100%;
+  gap: var(--space-4);
+}
+
+.testimonial-card__rating img {
+  flex: none;
+  width: 1.5rem;                       /* 24 px: 5 × 24 + 4 × 4 = 136 px */
+  height: 1.5rem;
+}
+
+.testimonial-card__text {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: var(--fs-xs);
+  line-height: var(--lh-xs);
+  color: var(--color-espresso);
+}
+
+/* Paginador: 3 puntos centrados */
+.testimonials__pager {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-28);
+}
+
+.testimonials__pager a {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;                      /* área táctil ≥ 44 px */
+  height: 2.75rem;
+}
+
+.testimonials__pager a::before {
+  content: "";
+  width: 0.75rem;                      /* 12 px */
+  height: 0.75rem;
+  border-radius: var(--radius-circle);
+  background-color: var(--color-espresso);
+  opacity: 0.3;
+}
+
+.testimonials__pager a:first-child::before {
+  opacity: 1;                          /* punto "activo" (solo visual) */
+}
+
+/* md (≥ 768 px): 2 cards */
+@media (min-width: 48rem) {
+  .testimonials__track {
+    --testimonials-gap: var(--space-24);
+  }
+
+  .testimonial-card {
+    flex-basis: calc((100% - var(--testimonials-gap)) / 2);
+  }
+}
+
+/* lg (≥ 1024 px): 3 cards a la vista, la central destacada */
+@media (min-width: 64rem) {
+  .testimonials__track {
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .testimonial-card {
+    flex: 1 1 0;
+    max-width: 26.0625rem;             /* 417 px */
+    min-height: 12.9375rem;            /* 207 px */
+  }
+
+  .testimonial-card--featured {
+    flex-grow: 1.1;
+    max-width: 27.5625rem;             /* 441 px */
+    min-height: 14.6875rem;            /* 235 px */
+  }
+
+  /* Paginador solo visual: el punto activo pasa a ser el central */
+  .testimonials__pager a {
+    width: 1.5rem;
+    height: 1.5rem;
+    pointer-events: none;
+  }
+
+  .testimonials__pager a:first-child::before {
+    opacity: 0.3;
+  }
+
+  .testimonials__pager a:nth-child(2)::before {
+    opacity: 1;
+  }
+}
+
+/* xl (≥ 1440 px): las cards miden 417 / 441 px y el rating entra a la derecha */
+@media (min-width: 90rem) {
+  .testimonial-card__rating {
+    flex: none;
+    margin-left: auto;
+  }
+}

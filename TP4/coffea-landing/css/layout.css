@@ -1,0 +1,25 @@
+/* css/layout.css */
+
+/* Contenedor (sección 4 y 7) */
+.container {
+  width: min(100% - 2 * var(--container-padding), var(--container));
+  margin-inline: auto;
+}
+
+/* Franjas de color de fondo (sección 3) */
+.categories,
+.promo,
+.newsletter {
+  background-color: var(--color-sand);
+}
+
+.products,
+.testimonials {
+  background-color: var(--color-bg);
+}
+
+/* Espaciado vertical de las secciones con contenedor */
+.products,
+.testimonials {
+  padding-block: var(--space-56);
+}

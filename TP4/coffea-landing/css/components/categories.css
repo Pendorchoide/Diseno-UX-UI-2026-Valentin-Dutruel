@@ -1,0 +1,77 @@
+/* css/components/categories.css */
+
+/* Base (mobile): grid 2 × 2 */
+.categories {
+  padding-block: var(--space-40);
+}
+
+.categories__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-40) var(--space-24);
+  justify-items: center;
+}
+
+.categories__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-12);
+  min-width: 2.75rem;                /* área táctil ≥ 44 px */
+  min-height: 2.75rem;
+  color: var(--color-muted);
+}
+
+.categories__icon-box {
+  display: grid;
+  place-items: center;
+  width: 5.125rem;     /* 82 px */
+  height: 5.125rem;
+}
+
+.categories__icon {
+  flex: none;          /* el tamaño sale de width/height del <svg> */
+}
+
+.categories__label {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: var(--fs-md);
+  text-align: center;
+}
+
+
+/* Hover: el texto pasa a --color-espresso (sección 8) */
+@media (hover: hover) {
+  .categories__item {
+    transition: color 200ms ease;
+  }
+
+  .categories__item:hover {
+    color: var(--color-espresso);
+  }
+}
+
+/* md (≥ 768 px): 4 en fila */
+@media (min-width: 48rem) {
+  .categories__list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 52.8125rem;           /* 845 px */
+    margin-inline: auto;
+  }
+}
+
+/* xl (≥ 1440 px): franja de 220 px del Figma */
+@media (min-width: 90rem) {
+  .categories {
+    display: flex;
+    align-items: center;
+    height: 220px;
+    padding-block: 0;
+  }
+
+  .categories .container {
+    width: 100%;
+  }
+}

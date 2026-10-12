@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Coffea | Specialty coffee and desserts</title>
+  <meta name="description" content="Coffea is a coffee shop serving the richest coffee and freshly baked desserts in the city. Order now and get 15% off.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Coffea | Specialty coffee and desserts">
+  <meta property="og:description" content="We serve the richest coffee in the city. Order now and get 15% off.">
+  <meta property="og:image" content="https://TU-SITIO.netlify.app/assets/img/og-image.jpg">
+  <meta property="og:url" content="https://TU-SITIO.netlify.app/">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&family=Reggae+One&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main conten</a>
+    <header class="header">
+        <div class="container header__inner">
+            <a class="header__logo" href="/">coffea</a>
+
+            <nav class="header__nav" aria-label="Main">
+                <ul class="header__list">
+                    <li><a class="header__link" href="#">home</a></li>
+                    <li><a class="header__link" href="#">coffee</a></li>
+                    <li><a class="header__link" href="#">bakery</a></li>
+                    <li><a class="header__link" href="#">shop</a></li>
+                    <li><a class="header__link" href="#">about</a></li>
+                    <li><a class="header__link header__link--login" href="#">login</a></li>
+                </ul>
+            </nav>
+
+            <button class="header__search" type="button" aria-label="Search">
+                <img src="assets/icons/search.svg" alt="" width="61" height="61">
+            </button>
+
+            <details class="header__menu">
+            <summary class="header__toggle">
+                <span class="visually-hidden">Menu</span>
+                <span class="header__burger" aria-hidden="true"></span>
+            </summary>
+</details>
+        </div>
+    </header>
+    <main id="main">
+
+        <section class="hero" aria-labelledby="hero-title">
+            <picture>
+                <source srcset="assets/img/hero.avif" type="image/avif">
+                <img class="hero__bg" src="assets/img/hero.avif" alt=""
+                    width="1920" height="1000" fetchpriority="high">
+            </picture>
+
+            <div class="container">
+                <div class="hero__content">
+                    <p class="hero__eyebrow">Welcome</p>
+                    <h1 class="hero__title" id="hero-title">We serve the richest coffee in the city!</h1>
+                    <p class="hero__text">Placeholder: texto descriptivo del hero (máx. 431 px de ancho).</p>
+                    <a class="hero__button" href="#coffee-title">Order Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories" aria-label="Categorías">
+            <div class="container">
+                <ul class="categories__list">
+                    <li>
+                        <a class="categories__item" href="#coffee-title">
+                        <span class="categories__icon-box">
+                            <svg class="categories__icon" width="73" height="67" viewBox="0 0 73 67"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true" focusable="false">
+                            <path d="M59.1677 20.5801H2.57251C1.89024 20.5801 1.23591 20.8511 0.75347 21.3335C0.271031 21.816 0 22.4703 0 23.1526V38.5876C0.00768813 42.9673 0.944305 47.2955 2.74801 51.2865C4.55172 55.2775 7.18148 58.8404 10.4637 61.7402H2.57251C1.89024 61.7402 1.23591 62.0112 0.75347 62.4937C0.271031 62.9761 0 63.6304 0 64.3127C0 64.995 0.271031 65.6493 0.75347 66.1317C1.23591 66.6142 1.89024 66.8852 2.57251 66.8852H59.1677C59.85 66.8852 60.5043 66.6142 60.9867 66.1317C61.4692 65.6493 61.7402 64.995 61.7402 64.3127C61.7402 63.6304 61.4692 62.9761 60.9867 62.4937C60.5043 62.0112 59.85 61.7402 59.1677 61.7402H51.2765C55.2163 58.2482 58.2038 53.8122 59.9587 48.8487C63.2262 48.6474 66.2939 47.2078 68.5368 44.8233C70.7797 42.4387 72.0291 39.2887 72.0302 36.0151V33.4426C72.0302 30.0312 70.6751 26.7596 68.2629 24.3474C65.8507 21.9352 62.579 20.5801 59.1677 20.5801ZM66.8852 36.0151C66.8841 37.6795 66.3449 39.2988 65.3482 40.6317C64.3514 41.9646 62.9505 42.9395 61.3543 43.4111C61.609 41.8158 61.738 40.2031 61.7402 38.5876V26.1688C63.2445 26.7007 64.5469 27.6857 65.4683 28.9883C66.3897 30.2909 66.8847 31.8471 66.8852 33.4426V36.0151ZM28.2976 12.8625V2.57251C28.2976 1.89024 28.5686 1.23591 29.0511 0.75347C29.5335 0.271031 30.1878 0 30.8701 0C31.5524 0 32.2067 0.271031 32.6891 0.75347C33.1716 1.23591 33.4426 1.89024 33.4426 2.57251V12.8625C33.4426 13.5448 33.1716 14.1991 32.6891 14.6816C32.2067 15.164 31.5524 15.435 30.8701 15.435C30.1878 15.435 29.5335 15.164 29.0511 14.6816C28.5686 14.1991 28.2976 13.5448 28.2976 12.8625ZM38.5876 12.8625V2.57251C38.5876 1.89024 38.8587 1.23591 39.3411 0.75347C39.8235 0.271031 40.4779 0 41.1601 0C41.8424 0 42.4967 0.271031 42.9792 0.75347C43.4616 1.23591 43.7326 1.89024 43.7326 2.57251V12.8625C43.7326 13.5448 43.4616 14.1991 42.9792 14.6816C42.4967 15.164 41.8424 15.435 41.1601 15.435C40.4779 15.435 39.8235 15.164 39.3411 14.6816C38.8587 14.1991 38.5876 13.5448 38.5876 12.8625ZM18.0076 12.8625V2.57251C18.0076 1.89024 18.2786 1.23591 18.761 0.75347C19.2435 0.271031 19.8978 0 20.5801 0C21.2623 0 21.9167 0.271031 22.3991 0.75347C22.8815 1.23591 23.1526 1.89024 23.1526 2.57251V12.8625C23.1526 13.5448 22.8815 14.1991 22.3991 14.6816C21.9167 15.164 21.2623 15.435 20.5801 15.435C19.8978 15.435 19.2435 15.164 18.761 14.6816C18.2786 14.1991 18.0076 13.5448 18.0076 12.8625Z"/>
+                            </svg>
+                        </span>
+                        <span class="categories__label">Hot Coffee</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="categories__item" href="#coffee-title">
+                        <span class="categories__icon-box">
+                            <svg class="categories__icon" width="55" height="64" viewBox="0 0 55 64"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true" focusable="false">
+                            <path d="M10.1998 0.00198934L6.09808 7.43219H0V14.1144H2.33333L4.7224 26.0007H0.990589L5.9258 47.8298L9.09011 47.8L12.2722 63.661H42.3977L42.608 62.6047L45.5772 47.798L48.587 47.8278L53.5096 25.9987H49.945L52.3188 14.1124H54.8802V7.4302H48.4021L44.2852 0L10.1998 0.00198934ZM11.9833 2.13656H42.5295L45.1263 6.86125H9.36626L11.9833 2.13656ZM2.69562 9.55681H52.1618V11.9997H2.69562V9.55681ZM4.22584 28.1234H50.292L46.3196 45.6753L27.2273 45.5182L8.19833 45.6753L4.22584 28.1234Z"/>
+                            </svg>
+                        </span>
+                        <span class="categories__label">Cold Coffee</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="categories__item" href="#coffee-title">
+                        <span class="categories__icon-box">
+                            <svg class="categories__icon" width="62" height="61" viewBox="0 0 62 61"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true" focusable="false">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7153 0C12.2013 0.000100413 11.699 0.129379 11.2733 0.371181C10.8476 0.612982 10.5179 0.956231 10.3267 1.35671L6.00244 10.4302H55.4634L51.1391 1.35671C50.9479 0.956231 50.6182 0.612982 50.1925 0.371181C49.7668 0.129379 49.2645 0.000100413 48.7505 0L12.7153 0ZM10.1722 58.6582L6.29072 37.4953H55.1751L51.2936 58.6582C51.2001 59.1681 50.8924 59.6331 50.4259 59.9691C49.9595 60.3051 49.3652 60.4899 48.7505 60.4901H12.7153C12.1006 60.4899 11.5063 60.3051 11.0399 59.9691C10.5734 59.6331 10.2657 59.1681 10.1722 58.6582ZM5.59061 15.8268H55.8803C58.9691 15.8268 61.4658 17.6502 61.4658 19.8969V28.0285C61.4658 30.2753 58.9639 32.09 55.8803 32.09H5.58546C2.49673 32.09 0 30.2753 0 28.0285V19.8969C0 17.6502 2.50702 15.8268 5.59061 15.8268Z"/>
+                            </svg>
+                        </span>
+                        <span class="categories__label">Cup Coffee</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="categories__item" href="#dessert-title">
+                        <span class="categories__icon-box">
+                            <svg class="categories__icon" width="69" height="62" viewBox="0 0 69 62"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true" focusable="false">
+                            <path d="M58.3102 10.29H37.7301V0H30.8701V10.29H10.29C4.61679 10.29 0 14.9068 0 20.5801V54.8802C0 58.6635 3.07672 61.7402 6.86002 61.7402H61.7402C65.5235 61.7402 68.6002 58.6635 68.6002 54.8802V20.5801C68.6002 14.9068 63.9834 10.29 58.3102 10.29ZM10.29 17.1501H58.3102C59.2199 17.1501 60.0923 17.5114 60.7356 18.1547C61.3788 18.7979 61.7402 19.6704 61.7402 20.5801L61.7436 31.2817C58.6703 32.0637 56.7049 33.7993 55.1717 35.1645C53.4327 36.708 52.2837 37.7301 49.7249 37.7301C47.1695 37.7301 46.0205 36.708 44.2814 35.1679C42.2406 33.3534 39.4486 30.8701 34.283 30.8701C29.1208 30.8701 26.3288 33.3534 24.2879 35.1679C22.5489 36.7114 21.4033 37.7301 18.8479 37.7301C16.2994 37.7301 15.1538 36.7114 13.4216 35.1679C11.8884 33.8028 9.92988 32.0637 6.86002 31.2817V20.5801C6.86002 19.6704 7.2214 18.7979 7.86465 18.1547C8.5079 17.5114 9.38034 17.1501 10.29 17.1501ZM6.86002 54.8802V38.7111C7.51515 39.133 8.14285 39.6509 8.85972 40.2923C10.9006 42.1068 13.6892 44.5901 18.8479 44.5901C24.0066 44.5901 26.8021 42.1068 28.843 40.2923C30.582 38.7488 31.7276 37.7301 34.283 37.7301C36.8383 37.7301 37.9874 38.7523 39.7264 40.2923C41.7672 42.1068 44.5593 44.5901 49.7249 44.5901C54.8905 44.5901 57.6859 42.1068 59.7268 40.2923C60.4505 39.6475 61.0816 39.1261 61.7436 38.7008L61.7471 54.8802H6.86002Z"/>
+                            </svg>
+                        </span>
+                        <span class="categories__label">Dessert</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="products" aria-labelledby="coffee-title">
+            <div class="container">
+                <h2 class="products__title" id="coffee-title">Our Special Coffee</h2>
+
+                <div class="carousel">
+                    <span class="carousel__arrow carousel__arrow--prev" aria-hidden="true">
+                        <img src="assets/icons/arrow-left.svg" alt="" width="71" height="71">
+                    </span>
+
+                    <ul class="carousel__track">
+                        <li class="carousel__item" id="coffee-1">
+                        <article class="product-card">
+                            <div class="product-card__media">
+                            <picture>
+                                <source srcset="assets/img/coffee-1.avif" type="image/avif">
+                                <img class="product-card__img" src="assets/img/coffee-1.avif"
+                                    alt="Taza de lungo coffee 1" width="334" height="364"
+                                    loading="lazy" decoding="async">
+                            </picture>
+
+                            <input class="product-card__fav-input visually-hidden" type="checkbox" id="fav-coffee-1">
+                            <label class="product-card__fav" for="fav-coffee-1" aria-label="Add to fav"></label>
+                            </div>
+
+                            <h3 class="product-card__title">Lungo coffee</h3>
+                            <p class="product-card__desc">Placeholder: descripción del producto.</p>
+
+                            <div class="product-card__footer">
+                            <data class="product-card__price" value="200">Rs. 200</data>
+                            <button class="product-card__button" type="button">Order Now</button>
+                            </div>
+                        </article>
+                        </li>
+                        <li class="carousel__item" id="coffee-2">
+                        <article class="product-card">
+                            <div class="product-card__media">
+                            <picture>
+                                <source srcset="assets/img/coffee-2.avif" type="image/avif">
+                                <img class="product-card__img" src="assets/img/coffee-2.avif"
+                                    alt="Taza de lungo coffee 2" width="334" height="364"
+                                    loading="lazy" decoding="async">
+                            </picture>
+
+                            <input class="product-card__fav-input visually-hidden" type="checkbox" id="fav-coffee-2">
+                            <label class="product-card__fav" for="fav-coffee-2" aria-label="Add to fav"></label>
+                            </div>
+
+                            <h3 class="product-card__title">Lungo coffee</h3>
+                            <p class="product-card__desc">Placeholder: descripción del producto.</p>
+
+                            <div class="product-card__footer">
+                            <data class="product-card__price" value="200">Rs. 200</data>
+                            <button class="product-card__button" type="button">Order Now</button>
+                            </div>
+                        </article>
+                        </li>
+                        <li class="carousel__item" id="coffee-3">
+                        <article class="product-card">
+                            <div class="product-card__media">
+                            <picture>
+                                <source srcset="assets/img/coffee-3.avif" type="image/avif">
+                                <img class="product-card__img" src="assets/img/coffee-3.avif"
+                                    alt="Taza de lungo coffee 3" width="334" height="364"
+                                    loading="lazy" decoding="async">
+                            </picture>
+
+                            <input class="product-card__fav-input visually-hidden" type="checkbox" id="fav-coffee-3">
+                            <label class="product-card__fav" for="fav-coffee-3" aria-label="Add to fav"></label>
+                            </div>
+
+                            <h3 class="product-card__title">Lungo coffee</h3>
+                            <p class="product-card__desc">Placeholder: descripción del producto.</p>
+
+                            <div class="product-card__footer">
+                            <data class="product-card__price" value="200">Rs. 200</data>
+                            <button class="product-card__button" type="button">Order Now</button>
+                            </div>
+                        </article>
+                        </li>
+                        <li class="carousel__item" id="coffee-4">
+                        <article class="product-card">
+                            <div class="product-card__media">
+                            <picture>
+                                <source srcset="assets/img/coffee-4.avif" type="image/avif">
+                                <img class="product-card__img" src="assets/img/coffee-4.avif"
+                                    alt="Taza de lungo coffee 4" width="334" height="364"
+                                    loading="lazy" decoding="async">
+                            </picture>
+
+                            <input class="product-card__fav-input visually-hidden" type="checkbox" id="fav-coffee-4">
+                            <label class="product-card__fav" for="fav-coffee-4" aria-label="Add to fav"></label>
+                            </div>
+
+                            <h3 class="product-card__title">Lungo coffee</h3>
+                            <p class="product-card__desc">Placeholder: descripción del producto.</p>
+
+                            <div class="product-card__footer">
+                            <data class="product-card__price" value="200">Rs. 200</data>
+                            <button class="product-card__button" type="button">Order Now</button>
+                            </div>
+                        </article>
+                        </li>
+                    </ul>
+                    <span class="carousel__arrow carousel__arrow--next" aria-hidden="true">
+                        <img src="assets/icons/arrow-right.svg" alt="" width="71" height="71">
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="products" aria-labelledby="dessert-title">
+            <div class="container">
+                <h2 class="products__title" id="dessert-title">Our Special Dessert</h2>
+
+                <div class="carousel">
+                    <span class="carousel__arrow carousel__arrow--prev" aria-hidden="true">
+                        <img src="assets/icons/arrow-left.svg" alt="" width="71" height="71">
+                    </span>
+
+                    <ul class="carousel__track">
+                        <li class="carousel__item" id="dessert-1">
+                        <article class="product-card">
+                            <div class="product-card__media">
+                            <picture>
+                                <source srcset="assets/img/dessert-1.avif" type="image/avif">
+                                <img class="product-card__img" src="assets/img/dessert-1.avif"
+                                    alt="Dessert 1" width="334" height="364"
+                                    loading="lazy" decoding="async">
+                            </picture>
+
+                            <input class="product-card__fav-input visually-hidden" type="checkbox" id="fav-dessert-1">
+                            <label class="product-card__fav" for="fav-dessert-1" aria-label="Add to fav"></label>
+                            </div>
+
+                            <h3 class="product-card__title">Lungo coffee</h3>
+                            <p class="product-card__desc">Placeholder: descripción del producto.</p>
+
+                            <div class="product-card__footer">
+                            <data class="product-card__price" value="200">Rs. 200</data>
+                            <button class="product-card__button" type="button">Order Now</button>
+                            </div>
+                        </article>
+                        </li>
+                        <li class="carousel__item" id="dessert-2">
+                        <article class="product-card">
+                            <div class="product-card__media">
+                            <picture>
+                                <source srcset="assets/img/dessert-2.avif" type="image/avif">
+                                <img class="product-card__img" src="assets/img/dessert-2.avif"
+                                    alt="Dessert 2" width="334" height="364"
+                                    loading="lazy" decoding="async">
+                            </picture>
+
+                            <input class="product-card__fav-input visually-hidden" type="checkbox" id="fav-dessert-2">
+                            <label class="product-card__fav" for="fav-dessert-2" aria-label="Add to fav"></label>
+                            </div>
+
+                            <h3 class="product-card__title">Lungo coffee</h3>
+                            <p class="product-card__desc">Placeholder: descripción del producto.</p>
+
+                            <div class="product-card__footer">
+                            <data class="product-card__price" value="200">Rs. 200</data>
+                            <button class="product-card__button" type="button">Order Now</button>
+                            </div>
+                        </article>
+                        </li>
+                        <li class="carousel__item" id="dessert-3">
+                        <article class="product-card">
+                            <div class="product-card__media">
+                            <picture>
+                                <source srcset="assets/img/dessert-3.avif" type="image/avif">
+                                <img class="product-card__img" src="assets/img/dessert-3.avif"
+                                    alt="Dessert 3" width="334" height="364"
+                                    loading="lazy" decoding="async">
+                            </picture>
+
+                            <input class="product-card__fav-input visually-hidden" type="checkbox" id="fav-dessert-3">
+                            <label class="product-card__fav" for="fav-dessert-3" aria-label="Add to fav"></label>
+                            </div>
+
+                            <h3 class="product-card__title">Lungo coffee</h3>
+                            <p class="product-card__desc">Placeholder: descripción del producto.</p>
+
+                            <div class="product-card__footer">
+                            <data class="product-card__price" value="200">Rs. 200</data>
+                            <button class="product-card__button" type="button">Order Now</button>
+                            </div>
+                        </article>
+                        </li>
+                        <li class="carousel__item" id="dessert-4">
+                        <article class="product-card">
+                            <div class="product-card__media">
+                            <picture>
+                                <source srcset="assets/img/dessert-4.avif" type="image/avif">
+                                <img class="product-card__img" src="assets/img/dessert-4.avif"
+                                    alt="Dessert 4" width="334" height="364"
+                                    loading="lazy" decoding="async">
+                            </picture>
+
+                            <input class="product-card__fav-input visually-hidden" type="checkbox" id="fav-dessert-4">
+                            <label class="product-card__fav" for="fav-dessert-4" aria-label="Add to fav"></label>
+                            </div>
+
+                            <h3 class="product-card__title">Lungo coffee</h3>
+                            <p class="product-card__desc">Placeholder: descripción del producto.</p>
+
+                            <div class="product-card__footer">
+                            <data class="product-card__price" value="200">Rs. 200</data>
+                            <button class="product-card__button" type="button">Order Now</button>
+                            </div>
+                        </article>
+                        </li>
+                    </ul>
+
+                    <span class="carousel__arrow carousel__arrow--next" aria-hidden="true">
+                        <img src="assets/icons/arrow-right.svg" alt="" width="71" height="71">
+                    </span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="promo" aria-labelledby="promo-title">
+            <img class="promo__img promo__img--left" src="assets/img/promo-hand.avif" alt=""
+                width="520" height="335" loading="lazy" decoding="async">
+
+            <div class="promo__content">
+                <h2 class="promo__title" id="promo-title">Check Out Our Best Coffee Beans</h2>
+                <a class="promo__button" href="#">
+                    Explore Our Products
+                <img src="assets/icons/chevron.svg" alt="" width="20" height="20">
+                </a>
+            </div>
+
+            <img class="promo__img promo__img--right" src="assets/img/promo-beans.avif" alt=""
+                width="503" height="335" loading="lazy" decoding="async">
+        </section>
+        
+        <section class="testimonials" aria-labelledby="testimonials-title">
+            <div class="container">
+                <h2 class="testimonials__title" id="testimonials-title">
+                    <span class="testimonials__eyebrow">Come and Join</span>
+                    Our Happy Customers
+                </h2>
+
+                <div class="testimonials__track">
+                    <figure class="testimonial-card" id="t-1">
+                        <blockquote class="testimonial-card__text">
+                        <p>Placeholder: lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </blockquote>
+                        <figcaption class="testimonial-card__author">
+                        <img class="testimonial-card__avatar" src="assets/img/avatar-1.avif" alt=""
+                            width="56" height="56" loading="lazy" decoding="async">
+                        <div>
+                            <span class="testimonial-card__name">James Smith</span>
+                            <span class="testimonial-card__role">Entrepreneur</span>
+                        </div>
+                        <span class="testimonial-card__rating" role="img" aria-label="5 out of 5 stars">
+                            <img src="assets/icons/star.svg" alt="">
+                            <img src="assets/icons/star.svg" alt="">
+                            <img src="assets/icons/star.svg" alt="">
+                            <img src="assets/icons/star.svg" alt="">
+                            <img src="assets/icons/star.svg" alt="">
+                        </span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="testimonial-card testimonial-card--featured" id="t-2">
+                        <blockquote class="testimonial-card__text">
+                        <p>Placeholder: lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </blockquote>
+                        <figcaption class="testimonial-card__author">
+                        <img class="testimonial-card__avatar" src="assets/img/avatar-2.avif" alt=""
+                            width="56" height="56" loading="lazy" decoding="async">
+                        <div>
+                            <span class="testimonial-card__name">James Smith</span>
+                            <span class="testimonial-card__role">Entrepreneur</span>
+                        </div>
+                        <span class="testimonial-card__rating" role="img" aria-label="5 out of 5 stars">
+                            <img src="assets/icons/star.svg" alt="">
+                            <img src="assets/icons/star.svg" alt="">
+                            <img src="assets/icons/star.svg" alt="">
+                            <img src="assets/icons/star.svg" alt="">
+                            <img src="assets/icons/star.svg" alt="">
+                        </span>
+                        </figcaption>
+                    </figure>
+                    <figure class="testimonial-card" id="t-3">
+                        <blockquote class="testimonial-card__text">
+                        <p>Placeholder: lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </blockquote>
+                        <figcaption class="testimonial-card__author">
+                        <img class="testimonial-card__avatar" src="assets/img/avatar-3.avif" alt=""
+                            width="56" height="56" loading="lazy" decoding="async">
+                        <div>
+                            <span class="testimonial-card__name">James Smith</span>
+                            <span class="testimonial-card__role">Entrepreneur</span>
+                        </div>
+                        <span class="testimonial-card__rating" role="img" aria-label="5 out of 5 stars">
+                            <img src="assets/icons/star.svg" alt="">
+                            <img src="assets/icons/star.svg" alt="">
+                            <img src="assets/icons/star.svg" alt="">
+                            <img src="assets/icons/star.svg" alt="">
+                            <img src="assets/icons/star.svg" alt="">
+                        </span>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <nav class="testimonials__pager" aria-label="Testimonies">
+                    <a href="#t-1" aria-label="Testimony 1"></a>
+                    <a href="#t-2" aria-label="Testimony 2"></a>
+                    <a href="#t-3" aria-label="Testimony 3"></a>
+                </nav>
+            </div>
+        </section>
+        
+        <section class="newsletter" aria-labelledby="newsletter-title">
+            <img class="newsletter__img newsletter__img--left" src="assets/img/newsletter-beans.avif" alt=""
+                width="482" height="321" loading="lazy" decoding="async">
+
+            <div class="newsletter__content">
+                <h2 class="newsletter__title" id="newsletter-title">Join in and get 15% off!</h2>
+                <p class="newsletter__subtitle">Placeholder: newsletter subtitle.</p>
+
+                <form class="newsletter__form" action="#" method="get">
+                <label class="visually-hidden" for="newsletter-email"></label>
+                <div class="newsletter__field">
+                    <img src="assets/icons/mail.svg" alt="" width="24" height="24">
+                    <input class="newsletter__input" id="newsletter-email" type="email"
+                        name="email" placeholder="Enter your email" required autocomplete="email">
+                </div>
+                <button class="newsletter__button" type="submit">Subscribe</button>
+                </form>
+            </div>
+
+            <img class="newsletter__img newsletter__img--right" src="assets/img/newsletter-beans.avif" alt=""
+                width="482" height="321" loading="lazy" decoding="async">
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer__inner">
+            <a class="footer__logo" href="/">Coffea</a>
+
+            <nav class="footer__col" aria-labelledby="footer-privacy">
+            <h3 class="footer__heading" id="footer-privacy">Privacy</h3>
+            <ul>
+                <li><a href="#">Placeholder 1</a></li>
+                <li><a href="#">Placeholder 2</a></li>
+                <li><a href="#">Placeholder 3</a></li>
+            </ul>
+            </nav>
+
+            <nav class="footer__col" aria-labelledby="footer-services">
+            <h3 class="footer__heading" id="footer-services">Services</h3>
+            <ul>
+                <li><a href="#">Plans &amp; pricing</a></li>
+                <li><a href="#">Sell your products</a></li>
+                <li><a href="#">Placeholder</a></li>
+            </ul>
+            </nav>
+
+            <nav class="footer__col" aria-labelledby="footer-about">
+            <h3 class="footer__heading" id="footer-about">About us</h3>
+            <ul>
+                <li><a href="#">Our story</a></li>
+                <li><a href="#">Placeholder</a></li>
+                <li><a href="#">Placeholder</a></li>
+            </ul>
+            </nav>
+
+            <nav class="footer__col" aria-labelledby="footer-info">
+            <h3 class="footer__heading" id="footer-info">Information</h3>
+            <ul>
+                <li><a href="#">Placeholder</a></li>
+                <li><a href="#">Placeholder</a></li>
+                <li><a href="#">Placeholder</a></li>
+            </ul>
+            </nav>
+
+            <div class="footer__col">
+                <h3 class="footer__heading">Social Media</h3>
+                <ul class="footer__social">
+                    <li><a href="#" aria-label="X (Twitter)"><img src="assets/icons/social-1.svg" alt="" width="24" height="24"></a></li>
+                    <li><a href="#" aria-label="Instagram"><img src="assets/icons/social-2.svg" alt="" width="24" height="24"></a></li>
+                    <li><a href="#" aria-label="Facebook"><img src="assets/icons/social-3.svg" alt="" width="24" height="24"></a></li>
+                    <li><a href="#" aria-label="LinkedIn"><img src="assets/icons/social-4.svg" alt="" width="24" height="24"></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

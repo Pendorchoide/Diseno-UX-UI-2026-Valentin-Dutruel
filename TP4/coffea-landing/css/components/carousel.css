@@ -1,0 +1,108 @@
+/* css/components/carousel.css */
+
+/* Título de las secciones Coffee / Dessert */
+.products__title {
+  margin-bottom: var(--space-64);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-h2);
+  letter-spacing: var(--ls-h2);
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-espresso);
+}
+
+/* Base (mobile): 1,2 cards visibles, swipe nativo, sin flechas */
+.carousel {
+  --carousel-gap: var(--space-16);
+  --cards-visible: 1.2;
+  position: relative;
+}
+
+.carousel__track {
+  display: flex;
+  gap: var(--carousel-gap);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;              /* oculta la barra (Firefox, Chrome, Safari 18.2+) */
+
+  /* Aire arriba y abajo para que la sombra del hover no se recorte.
+     El margen negativo compensa el padding y el layout no cambia. */
+  padding-block: var(--space-40);
+  margin-block: calc(var(--space-40) * -1);
+}
+
+.carousel__track::-webkit-scrollbar {
+  display: none;                      /* Safari anterior */
+}
+
+.carousel__item {
+  flex: 0 0 calc(
+    (100% - var(--carousel-gap) * (var(--cards-visible) - 1)) / var(--cards-visible)
+  );
+  scroll-snap-align: start;
+}
+
+.carousel__arrow {
+  display: none;
+}
+
+/* md (≥ 768 px): 2,5 cards */
+@media (min-width: 48rem) {
+  .carousel {
+    --cards-visible: 2.5;
+  }
+}
+
+/* lg (≥ 1024 px): 4 cards con gap de 4 px */
+@media (min-width: 64rem) {
+  .carousel {
+    --cards-visible: 4;
+    --carousel-gap: var(--space-4);
+  }
+}
+
+/* xl (≥ 1440 px): medidas del Figma + flechas */
+@media (min-width: 90rem) {
+  .carousel {
+    /* 1476 px de ancho, centrado aunque el container mida 1444 px */
+    --carousel-width: min(92.25rem, 100vw - 2 * var(--container-padding));
+    width: var(--carousel-width);
+    margin-left: calc(50% - var(--carousel-width) / 2);
+  }
+
+  .carousel__item {
+    height: 35.625rem;                /* 570 px */
+  }
+
+  .carousel__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 4.4375rem;                 /* 71 px */
+    height: 4.4375rem;
+    translate: 0 -50%;                /* centrado vertical sin pisar el transform del hover */
+  }
+
+  /* 80 px del borde de la ventana (no del carrusel) */
+  .carousel__arrow--prev {
+    left: calc(80px + (100% - 100vw) / 2);
+  }
+
+  .carousel__arrow--next {
+    right: calc(80px + (100% - 100vw) / 2);
+  }
+}
+
+@media (min-width: 90rem) and (hover: hover) {
+  .carousel__arrow {
+    transition: transform 200ms ease;
+  }
+
+  .carousel__arrow:hover {
+    transform: translateY(-2px);
+  }
+}

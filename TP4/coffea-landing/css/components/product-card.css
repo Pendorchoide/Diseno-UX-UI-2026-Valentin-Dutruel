@@ -1,0 +1,112 @@
+/* css/components/product-card.css */
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  height: 100%;
+  padding: var(--space-16);
+  border: 1.5px solid var(--color-sand);
+  border-radius: var(--radius-card);
+  background-color: var(--color-sand-20);
+}
+
+/* Imagen + corazón */
+.product-card__media {
+  position: relative;
+  overflow: hidden;                  /* para el zoom del hover */
+  aspect-ratio: 334 / 364;
+  border-radius: var(--radius-img);
+}
+
+.product-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Favorito: checkbox oculto + label con el corazón de fondo */
+.product-card__fav {
+  position: absolute;
+  top: 0.78125rem;                   /* 18 px al ícono (33 px dentro de 44 px) */
+  right: 0.78125rem;
+  width: 2.75rem;                    /* área táctil ≥ 44 px */
+  height: 2.75rem;
+  background: url("../../assets/icons/heart.svg") center / 2.0625rem no-repeat;  /* 33 px */
+  cursor: pointer;
+}
+
+.product-card__fav-input:checked + .product-card__fav {
+  background-image: url("../../assets/icons/heart-filled.svg");
+}
+
+.product-card__fav-input:focus-visible + .product-card__fav {
+  outline: 2px solid var(--color-white);
+  outline-offset: 0;
+  border-radius: var(--radius-circle);
+}
+
+/* Texto */
+.product-card__title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-card-title);
+  line-height: 1.2;
+}
+
+.product-card__desc {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-lg);           /* 20 px */
+  line-height: 1.4;                  /* 28 / 20 */
+  color: var(--color-maroon);
+}
+
+/* Precio + botón, siempre pegados abajo */
+.product-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  margin-top: auto;
+}
+
+.product-card__price {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: var(--fs-lg);
+  color: var(--color-maroon);
+}
+
+.product-card__button {
+  min-height: 2.75rem;               /* área táctil ≥ 44 px */
+  padding: var(--space-10) var(--space-26);
+  border: 0;
+  border-radius: var(--radius-btn);
+  background-color: var(--color-maroon);
+  color: var(--color-white);
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: var(--fs-sm);
+}
+
+/* Hover solo en dispositivos con puntero (sección 8) */
+@media (hover: hover) {
+  .product-card,
+  .product-card__img,
+  .product-card__button {
+    transition: box-shadow 200ms ease, transform 200ms ease;
+  }
+
+  .product-card:hover {
+    box-shadow: var(--shadow-card);
+  }
+
+  .product-card:hover .product-card__img {
+    transform: scale(1.03);
+  }
+
+  .product-card__button:hover {
+    transform: translateY(-2px);
+  }
+}

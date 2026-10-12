@@ -1,0 +1,109 @@
+/* css/components/promo.css */
+
+/* Base (mobile): sin imágenes, texto y botón centrados */
+.promo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding-block: var(--space-56);
+  overflow: hidden;
+}
+
+.promo__img {
+  display: none;                      /* decorativas: se ocultan en mobile */
+}
+
+.promo__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-28);
+  padding-inline: var(--container-padding);
+  text-align: center;
+}
+
+.promo__title {
+  max-width: 23.25rem;                /* 372 px */
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-cta);
+  line-height: var(--lh-cta);
+  color: var(--color-espresso);
+  text-wrap: balance;                 /* reparte las 2 líneas parejo */
+}
+
+.promo__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  width: 16.125rem;                   /* 258 px */
+  max-width: 100%;
+  height: 3.1875rem;                  /* 51 px */
+  border-radius: var(--radius-pill);
+  background-color: var(--color-espresso);
+  color: var(--color-bg);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-base);
+}
+
+.promo__button img {
+  flex: none;
+  width: 1.25rem;                     /* 20 px */
+  height: 1.25rem;
+}
+
+@media (hover: hover) {
+  .promo__button {
+    transition: transform 200ms ease;
+  }
+
+  .promo__button:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* md (≥ 768 px): aparece la imagen izquierda, reducida */
+@media (min-width: 48rem) {
+  .promo__img--left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 12rem;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+  }
+}
+
+/* lg (≥ 1024 px) y xl: diseño original, las imágenes escalan hasta su tamaño */
+@media (min-width: 64rem) {
+  .promo {
+    height: 20.9375rem;               /* 335 px */
+    padding-block: 0;
+  }
+
+  .promo__img {
+    position: absolute;
+    top: 0;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .promo__img--left {
+    left: 0;
+    width: min(32.5rem, 28vw);        /* 520 px a 1920 */
+    object-position: right center;
+  }
+
+  .promo__img--right {
+    right: 0;
+    width: min(31.4375rem, 28vw);     /* 503 px a 1920 */
+    object-position: left center;
+  }
+}

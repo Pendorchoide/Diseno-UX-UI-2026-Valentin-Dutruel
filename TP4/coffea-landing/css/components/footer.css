@@ -1,0 +1,117 @@
+/* css/components/footer.css */
+
+/* Base (mobile): columnas apiladas, links en 2 × 2 */
+.footer {
+  padding-block: var(--space-56);
+  background-color: var(--color-espresso);
+  color: var(--color-white);
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-40) var(--space-24);
+}
+
+.footer__logo {
+  grid-column: 1 / -1;                 /* el logo ocupa toda la fila */
+  justify-self: start;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-logo);
+  line-height: 1;
+}
+
+.footer__heading {
+  margin-bottom: var(--space-24);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--fs-footer-h);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* Lista de links (las 4 columnas de texto) */
+.footer__col > ul:not(.footer__social) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);                /* mobile; en xl pasa a 42 px de separación */
+}
+
+.footer__col a {
+  font-family: var(--font-ui);
+  font-weight: 400;
+  font-size: var(--fs-md);
+}
+
+/* Íconos sociales: área táctil de 44 × 44 px */
+.footer__social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.footer__social a {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.footer__social img {
+  max-width: 1.5rem;                   /* 24 px; los de 11 y 20 px no se agrandan */
+  max-height: 1.5rem;
+}
+
+/* Foco visible sobre fondo oscuro (sección 8) */
+.footer :focus-visible {
+  outline-color: var(--color-white);
+}
+
+@media (hover: hover) {
+  .footer__col a {
+    transition: opacity 200ms ease;
+  }
+
+  .footer__col a:hover {
+    opacity: 0.7;
+  }
+}
+
+/* md (≥ 768 px): 3 columnas */
+@media (min-width: 48rem) {
+  .footer__inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* lg (≥ 1024 px): 6 columnas en fila (logo + 5 columnas) */
+@media (min-width: 64rem) {
+  .footer__inner {
+    grid-template-columns: repeat(6, auto);
+    justify-content: space-between;
+  }
+
+  .footer__logo {
+    grid-column: auto;
+  }
+}
+
+/* xl (≥ 1440 px): medidas del Figma */
+@media (min-width: 90rem) {
+  .footer {
+    display: flex;
+    align-items: center;
+    height: 358px;
+    padding-block: 0;
+  }
+
+  .footer__inner {
+    width: min(100% - 2 * var(--container-padding), var(--container));
+    align-items: start;
+  }
+
+  .footer__col > ul:not(.footer__social) {
+    gap: var(--space-24);              /* ver nota sobre los 42 px */
+  }
+}

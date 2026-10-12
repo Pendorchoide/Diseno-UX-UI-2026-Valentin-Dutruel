@@ -1,0 +1,205 @@
+/* css/components/header.css */
+
+/* Base (mobile): header superpuesto al hero */
+.header {
+  position: absolute;
+  top: var(--space-24);
+  inset-inline: 0;
+  z-index: 10;
+  color: var(--color-white);
+}
+
+.header__inner {
+  position: relative;                 /* referencia del panel del menú */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+}
+
+.header__logo {
+  margin-right: auto;                 /* empuja búsqueda y menú a la derecha */
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-logo);
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+/* Nav: oculta hasta que el <details> se abre */
+.header__nav {
+  display: none;
+}
+
+.header__inner:has(.header__menu[open]) .header__nav {
+  position: absolute;
+  top: calc(100% + var(--space-16));
+  inset-inline: 0;
+  display: block;
+  padding: var(--space-12) var(--space-24);
+  border-radius: var(--radius-card);
+  background-color: var(--color-espresso);
+}
+
+.header__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.header__link {
+  display: block;
+  padding-block: var(--space-12);     /* ítems de ≥ 44 px de alto */
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: var(--fs-md);
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.header__link--login {
+  font-weight: 600;
+}
+
+/* Botón de búsqueda */
+.header__search {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.75rem;                     /* 44 px: área táctil mínima en mobile */
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-circle);
+  background-color: var(--color-white);
+}
+
+.header__search img {
+  width: 1.6875rem;                   
+  height: 1.6875rem;
+}
+
+/* Botón hamburguesa (<summary>) */
+.header__menu {
+  flex: none;
+}
+
+.header__toggle {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  list-style: none;
+  cursor: pointer;
+}
+
+.header__toggle::-webkit-details-marker {
+  display: none;                      /* Safari */
+}
+
+.header__burger,
+.header__burger::before,
+.header__burger::after {
+  display: block;
+  width: 1.5rem;
+  height: 0.125rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-white);
+}
+
+.header__burger {
+  position: relative;
+}
+
+.header__burger::before,
+.header__burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.header__burger::before {
+  top: -0.4375rem;
+}
+
+.header__burger::after {
+  top: 0.4375rem;
+}
+
+/* Abierto: las tres barras pasan a una X */
+.header__menu[open] .header__burger {
+  background-color: transparent;
+}
+
+.header__menu[open] .header__burger::before {
+  top: 0;
+  rotate: 45deg;
+}
+
+.header__menu[open] .header__burger::after {
+  top: 0;
+  rotate: -45deg;
+}
+
+/* Foco visible sobre fondo oscuro (sección 8) */
+.header :focus-visible {
+  outline-color: var(--color-white);
+}
+
+/* Hover solo en dispositivos con puntero */
+@media (hover: hover) {
+  .header__link,
+  .header__search {
+    transition: transform 200ms ease, opacity 200ms ease;
+  }
+
+  .header__link:hover {
+    opacity: 0.8;
+  }
+
+  .header__search:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* lg (≥ 1024 px): nav horizontal completa, sin hamburguesa */
+@media (min-width: 64rem) {
+  .header__logo {
+    margin-right: 0;
+  }
+
+  .header__menu {
+    display: none;
+  }
+
+  .header__nav,
+  .header__inner:has(.header__menu[open]) .header__nav {
+    position: static;
+    display: block;
+    padding: 0;
+    border-radius: 0;
+    background: none;
+  }
+
+  .header__list {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-40);
+  }
+
+  .header__link {
+    padding-block: 0;
+  }
+
+  .header__search {
+    width: 3.8125rem;                 /* 61 px, como en Figma */
+    height: 3.8125rem;
+  }
+}
+
+/* xl (≥ 1440 px): posición del Figma */
+@media (min-width: 90rem) {
+  .header {
+    top: var(--space-56);             /* Figma: 55 px, dentro de la tolerancia de 4 px */
+  }
+}
