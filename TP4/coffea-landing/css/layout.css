@@ -1,3 +1,4 @@
+@layer layout {
 /* css/layout.css */
 
 /* Contenedor (sección 4 y 7) */
@@ -22,4 +23,5 @@
 .products,
 .testimonials {
   padding-block: var(--space-56);
+}
 }

@@ -1,3 +1,4 @@
+@layer components {
 /* css/components/header.css */
 
 /* Base (mobile): header superpuesto al hero */
@@ -71,12 +72,13 @@
   padding: 0;
   border: 0;
   border-radius: var(--radius-circle);
-  background-color: var(--color-white);
+  background-color: transparent;
 }
 
 .header__search img {
   width: 1.6875rem;                   
   height: 1.6875rem;
+  filter: brightness(0) invert(1);   /* lupa blanca y sutil en mobile */
 }
 
 /* Botón hamburguesa (<summary>) */
@@ -194,6 +196,11 @@
   .header__search {
     width: 3.8125rem;                 /* 61 px, como en Figma */
     height: 3.8125rem;
+    background-color: var(--color-white);
+  }
+
+  .header__search img {
+    filter: none;
   }
 }
 
@@ -202,4 +209,5 @@
   .header {
     top: var(--space-56);             /* Figma: 55 px, dentro de la tolerancia de 4 px */
   }
+}
 }

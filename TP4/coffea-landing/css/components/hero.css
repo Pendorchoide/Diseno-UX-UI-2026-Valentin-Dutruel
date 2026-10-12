@@ -1,3 +1,4 @@
+@layer components {
 /* css/components/hero.css */
 
 /* Base (mobile) */
@@ -122,4 +123,5 @@
   .hero__button {
     margin-top: var(--space-56);
   }
+}
 }

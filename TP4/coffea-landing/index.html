@@ -17,16 +17,34 @@
   <!-- Favicon -->
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&family=Reggae+One&display=swap" rel="stylesheet">
+  <!-- Fonts (self-hosted woff2, latin subset, font-display: swap) -->
+  <link rel="preload" href="assets/fonts/playfairdisplay-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/outfit-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/poppins-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/reggaeone-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
 
-  <!-- Styles -->
+  <!-- Styles (direct links, layered; layer order lives in css/main.css) -->
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/hero.css">
+  <link rel="stylesheet" href="css/components/categories.css">
+  <link rel="stylesheet" href="css/components/product-card.css">
+  <link rel="stylesheet" href="css/components/carousel.css">
+  <link rel="stylesheet" href="css/components/promo.css">
+  <link rel="stylesheet" href="css/components/testimonial-card.css">
+  <link rel="stylesheet" href="css/components/newsletter.css">
+  <link rel="stylesheet" href="css/components/error-page.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+  <link rel="stylesheet" href="css/utilities.css">
 </head>
 <body>
-    <a class="skip-link" href="#main">Skip to main conten</a>
+    <a class="skip-link" href="#main">Skip to main content</a>
     <header class="header">
         <div class="container header__inner">
             <a class="header__logo" href="/">coffea</a>
@@ -58,22 +76,24 @@
 
         <section class="hero" aria-labelledby="hero-title">
             <picture>
-                <source srcset="assets/img/hero.avif" type="image/avif">
-                <img class="hero__bg" src="assets/img/hero.avif" alt=""
-                    width="1920" height="1000" fetchpriority="high">
+                <source type="image/avif" sizes="100vw"
+                    srcset="assets/img/hero-480.avif 480w, assets/img/hero-768.avif 768w, assets/img/hero-1024.avif 1024w, assets/img/hero-1440.avif 1440w, assets/img/hero-1920.avif 1920w, assets/img/hero-2560.avif 2560w">
+                <img class="hero__bg" src="assets/img/hero-1920.jpg" sizes="100vw"
+                    srcset="assets/img/hero-480.jpg 480w, assets/img/hero-768.jpg 768w, assets/img/hero-1024.jpg 1024w, assets/img/hero-1440.jpg 1440w, assets/img/hero-1920.jpg 1920w, assets/img/hero-2560.jpg 2560w"
+                    alt="" width="1920" height="1000" fetchpriority="high">
             </picture>
 
             <div class="container">
                 <div class="hero__content">
                     <p class="hero__eyebrow">Welcome</p>
                     <h1 class="hero__title" id="hero-title">We serve the richest coffee in the city!</h1>
-                    <p class="hero__text">Placeholder: texto descriptivo del hero (máx. 431 px de ancho).</p>
+                    <p class="hero__text">Placeholder: short supporting paragraph for the hero (max. 431 px wide).</p>
                     <a class="hero__button" href="#coffee-title">Order Now</a>
                 </div>
             </div>
         </section>
 
-        <section class="categories" aria-label="Categorías">
+        <section class="categories" aria-label="Categories">
             <div class="container">
                 <ul class="categories__list">
                     <li>
@@ -146,20 +166,20 @@
                             <div class="product-card__media">
                             <picture>
                                 <source srcset="assets/img/coffee-1.avif" type="image/avif">
-                                <img class="product-card__img" src="assets/img/coffee-1.avif"
-                                    alt="Taza de lungo coffee 1" width="334" height="364"
+                                <img class="product-card__img" src="assets/img/coffee-1.jpg"
+                                    alt="A cup of Lungo coffee, serving 1" width="334" height="364"
                                     loading="lazy" decoding="async">
                             </picture>
 
-                            <input class="product-card__fav-input visually-hidden" type="checkbox" id="fav-coffee-1">
-                            <label class="product-card__fav" for="fav-coffee-1" aria-label="Add to fav"></label>
+                            <input class="product-card__fav-input" type="checkbox" id="fav-coffee-1">
+                            <label class="product-card__fav" for="fav-coffee-1" aria-label="Add Lungo coffee 1 to favorites"></label>
                             </div>
 
                             <h3 class="product-card__title">Lungo coffee</h3>
-                            <p class="product-card__desc">Placeholder: descripción del producto.</p>
+                            <p class="product-card__desc">Placeholder: product description.</p>
 
                             <div class="product-card__footer">
-                            <data class="product-card__price" value="200">Rs. 200</data>
+                            <data class="product-card__price" value="200">$200</data>
                             <button class="product-card__button" type="button">Order Now</button>
                             </div>
                         </article>
@@ -169,20 +189,20 @@
                             <div class="product-card__media">
                             <picture>
                                 <source srcset="assets/img/coffee-2.avif" type="image/avif">
-                                <img class="product-card__img" src="assets/img/coffee-2.avif"
-                                    alt="Taza de lungo coffee 2" width="334" height="364"
+                                <img class="product-card__img" src="assets/img/coffee-2.jpg"
+                                    alt="A cup of Lungo coffee, serving 2" width="334" height="364"
                                     loading="lazy" decoding="async">
                             </picture>
 
-                            <input class="product-card__fav-input visually-hidden" type="checkbox" id="fav-coffee-2">
-                            <label class="product-card__fav" for="fav-coffee-2" aria-label="Add to fav"></label>
+                            <input class="product-card__fav-input" type="checkbox" id="fav-coffee-2">
+                            <label class="product-card__fav" for="fav-coffee-2" aria-label="Add Lungo coffee 2 to favorites"></label>
                             </div>
 
                             <h3 class="product-card__title">Lungo coffee</h3>
-                            <p class="product-card__desc">Placeholder: descripción del producto.</p>
+                            <p class="product-card__desc">Placeholder: product description.</p>
 
                             <div class="product-card__footer">
-                            <data class="product-card__price" value="200">Rs. 200</data>
+                            <data class="product-card__price" value="200">$200</data>
                             <button class="product-card__button" type="button">Order Now</button>
                             </div>
                         </article>
@@ -192,20 +212,20 @@
                             <div class="product-card__media">
                             <picture>
                                 <source srcset="assets/img/coffee-3.avif" type="image/avif">
-                                <img class="product-card__img" src="assets/img/coffee-3.avif"
-                                    alt="Taza de lungo coffee 3" width="334" height="364"
+                                <img class="product-card__img" src="assets/img/coffee-3.jpg"
+                                    alt="A cup of Lungo coffee, serving 3" width="334" height="364"
                                     loading="lazy" decoding="async">
                             </picture>
 
-                            <input class="product-card__fav-input visually-hidden" type="checkbox" id="fav-coffee-3">
-                            <label class="product-card__fav" for="fav-coffee-3" aria-label="Add to fav"></label>
+                            <input class="product-card__fav-input" type="checkbox" id="fav-coffee-3">
+                            <label class="product-card__fav" for="fav-coffee-3" aria-label="Add Lungo coffee 3 to favorites"></label>
                             </div>
 
                             <h3 class="product-card__title">Lungo coffee</h3>
-                            <p class="product-card__desc">Placeholder: descripción del producto.</p>
+                            <p class="product-card__desc">Placeholder: product description.</p>
 
                             <div class="product-card__footer">
-                            <data class="product-card__price" value="200">Rs. 200</data>
+                            <data class="product-card__price" value="200">$200</data>
                             <button class="product-card__button" type="button">Order Now</button>
                             </div>
                         </article>
@@ -215,20 +235,20 @@
                             <div class="product-card__media">
                             <picture>
                                 <source srcset="assets/img/coffee-4.avif" type="image/avif">
-                                <img class="product-card__img" src="assets/img/coffee-4.avif"
-                                    alt="Taza de lungo coffee 4" width="334" height="364"
+                                <img class="product-card__img" src="assets/img/coffee-4.jpg"
+                                    alt="A cup of Lungo coffee, serving 4" width="334" height="364"
                                     loading="lazy" decoding="async">
                             </picture>
 
-                            <input class="product-card__fav-input visually-hidden" type="checkbox" id="fav-coffee-4">
-                            <label class="product-card__fav" for="fav-coffee-4" aria-label="Add to fav"></label>
+                            <input class="product-card__fav-input" type="checkbox" id="fav-coffee-4">
+                            <label class="product-card__fav" for="fav-coffee-4" aria-label="Add Lungo coffee 4 to favorites"></label>
                             </div>
 
                             <h3 class="product-card__title">Lungo coffee</h3>
-                            <p class="product-card__desc">Placeholder: descripción del producto.</p>
+                            <p class="product-card__desc">Placeholder: product description.</p>
 
                             <div class="product-card__footer">
-                            <data class="product-card__price" value="200">Rs. 200</data>
+                            <data class="product-card__price" value="200">$200</data>
                             <button class="product-card__button" type="button">Order Now</button>
                             </div>
                         </article>
@@ -256,20 +276,20 @@
                             <div class="product-card__media">
                             <picture>
                                 <source srcset="assets/img/dessert-1.avif" type="image/avif">
-                                <img class="product-card__img" src="assets/img/dessert-1.avif"
-                                    alt="Dessert 1" width="334" height="364"
+                                <img class="product-card__img" src="assets/img/dessert-1.jpg"
+                                    alt="Placeholder: dessert plate 1" width="334" height="364"
                                     loading="lazy" decoding="async">
                             </picture>
 
-                            <input class="product-card__fav-input visually-hidden" type="checkbox" id="fav-dessert-1">
-                            <label class="product-card__fav" for="fav-dessert-1" aria-label="Add to fav"></label>
+                            <input class="product-card__fav-input" type="checkbox" id="fav-dessert-1">
+                            <label class="product-card__fav" for="fav-dessert-1" aria-label="Add dessert 1 to favorites"></label>
                             </div>
 
-                            <h3 class="product-card__title">Lungo coffee</h3>
-                            <p class="product-card__desc">Placeholder: descripción del producto.</p>
+                            <h3 class="product-card__title">Placeholder dessert 1</h3>
+                            <p class="product-card__desc">Placeholder: product description.</p>
 
                             <div class="product-card__footer">
-                            <data class="product-card__price" value="200">Rs. 200</data>
+                            <data class="product-card__price" value="200">$200</data>
                             <button class="product-card__button" type="button">Order Now</button>
                             </div>
                         </article>
@@ -279,20 +299,20 @@
                             <div class="product-card__media">
                             <picture>
                                 <source srcset="assets/img/dessert-2.avif" type="image/avif">
-                                <img class="product-card__img" src="assets/img/dessert-2.avif"
-                                    alt="Dessert 2" width="334" height="364"
+                                <img class="product-card__img" src="assets/img/dessert-2.jpg"
+                                    alt="Placeholder: dessert plate 2" width="334" height="364"
                                     loading="lazy" decoding="async">
                             </picture>
 
-                            <input class="product-card__fav-input visually-hidden" type="checkbox" id="fav-dessert-2">
-                            <label class="product-card__fav" for="fav-dessert-2" aria-label="Add to fav"></label>
+                            <input class="product-card__fav-input" type="checkbox" id="fav-dessert-2">
+                            <label class="product-card__fav" for="fav-dessert-2" aria-label="Add dessert 2 to favorites"></label>
                             </div>
 
-                            <h3 class="product-card__title">Lungo coffee</h3>
-                            <p class="product-card__desc">Placeholder: descripción del producto.</p>
+                            <h3 class="product-card__title">Placeholder dessert 2</h3>
+                            <p class="product-card__desc">Placeholder: product description.</p>
 
                             <div class="product-card__footer">
-                            <data class="product-card__price" value="200">Rs. 200</data>
+                            <data class="product-card__price" value="200">$200</data>
                             <button class="product-card__button" type="button">Order Now</button>
                             </div>
                         </article>
@@ -302,20 +322,20 @@
                             <div class="product-card__media">
                             <picture>
                                 <source srcset="assets/img/dessert-3.avif" type="image/avif">
-                                <img class="product-card__img" src="assets/img/dessert-3.avif"
-                                    alt="Dessert 3" width="334" height="364"
+                                <img class="product-card__img" src="assets/img/dessert-3.jpg"
+                                    alt="Placeholder: dessert plate 3" width="334" height="364"
                                     loading="lazy" decoding="async">
                             </picture>
 
-                            <input class="product-card__fav-input visually-hidden" type="checkbox" id="fav-dessert-3">
-                            <label class="product-card__fav" for="fav-dessert-3" aria-label="Add to fav"></label>
+                            <input class="product-card__fav-input" type="checkbox" id="fav-dessert-3">
+                            <label class="product-card__fav" for="fav-dessert-3" aria-label="Add dessert 3 to favorites"></label>
                             </div>
 
-                            <h3 class="product-card__title">Lungo coffee</h3>
-                            <p class="product-card__desc">Placeholder: descripción del producto.</p>
+                            <h3 class="product-card__title">Placeholder dessert 3</h3>
+                            <p class="product-card__desc">Placeholder: product description.</p>
 
                             <div class="product-card__footer">
-                            <data class="product-card__price" value="200">Rs. 200</data>
+                            <data class="product-card__price" value="200">$200</data>
                             <button class="product-card__button" type="button">Order Now</button>
                             </div>
                         </article>
@@ -325,20 +345,20 @@
                             <div class="product-card__media">
                             <picture>
                                 <source srcset="assets/img/dessert-4.avif" type="image/avif">
-                                <img class="product-card__img" src="assets/img/dessert-4.avif"
-                                    alt="Dessert 4" width="334" height="364"
+                                <img class="product-card__img" src="assets/img/dessert-4.jpg"
+                                    alt="Placeholder: dessert plate 4" width="334" height="364"
                                     loading="lazy" decoding="async">
                             </picture>
 
-                            <input class="product-card__fav-input visually-hidden" type="checkbox" id="fav-dessert-4">
-                            <label class="product-card__fav" for="fav-dessert-4" aria-label="Add to fav"></label>
+                            <input class="product-card__fav-input" type="checkbox" id="fav-dessert-4">
+                            <label class="product-card__fav" for="fav-dessert-4" aria-label="Add dessert 4 to favorites"></label>
                             </div>
 
-                            <h3 class="product-card__title">Lungo coffee</h3>
-                            <p class="product-card__desc">Placeholder: descripción del producto.</p>
+                            <h3 class="product-card__title">Placeholder dessert 4</h3>
+                            <p class="product-card__desc">Placeholder: product description.</p>
 
                             <div class="product-card__footer">
-                            <data class="product-card__price" value="200">Rs. 200</data>
+                            <data class="product-card__price" value="200">$200</data>
                             <button class="product-card__button" type="button">Order Now</button>
                             </div>
                         </article>
@@ -353,8 +373,11 @@
         </section>
         
         <section class="promo" aria-labelledby="promo-title">
-            <img class="promo__img promo__img--left" src="assets/img/promo-hand.avif" alt=""
-                width="520" height="335" loading="lazy" decoding="async">
+            <picture>
+                <source srcset="assets/img/promo-hand.avif" type="image/avif">
+                <img class="promo__img promo__img--left" src="assets/img/promo-hand.jpg" alt=""
+                    width="520" height="335" loading="lazy" decoding="async">
+            </picture>
 
             <div class="promo__content">
                 <h2 class="promo__title" id="promo-title">Check Out Our Best Coffee Beans</h2>
@@ -364,8 +387,11 @@
                 </a>
             </div>
 
-            <img class="promo__img promo__img--right" src="assets/img/promo-beans.avif" alt=""
-                width="503" height="335" loading="lazy" decoding="async">
+            <picture>
+                <source srcset="assets/img/promo-beans.avif" type="image/avif">
+                <img class="promo__img promo__img--right" src="assets/img/promo-beans.jpg" alt=""
+                    width="503" height="335" loading="lazy" decoding="async">
+            </picture>
         </section>
         
         <section class="testimonials" aria-labelledby="testimonials-title">
@@ -381,18 +407,21 @@
                         <p>Placeholder: lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </blockquote>
                         <figcaption class="testimonial-card__author">
-                        <img class="testimonial-card__avatar" src="assets/img/avatar-1.avif" alt=""
-                            width="56" height="56" loading="lazy" decoding="async">
+                        <picture>
+                            <source srcset="assets/img/avatar-1.avif" type="image/avif">
+                            <img class="testimonial-card__avatar" src="assets/img/avatar-1.jpg" alt=""
+                                width="56" height="56" loading="lazy" decoding="async">
+                        </picture>
                         <div>
                             <span class="testimonial-card__name">James Smith</span>
                             <span class="testimonial-card__role">Entrepreneur</span>
                         </div>
-                        <span class="testimonial-card__rating" role="img" aria-label="5 out of 5 stars">
+                        <span class="testimonial-card__rating" role="img" aria-label="4 out of 5 stars">
                             <img src="assets/icons/star.svg" alt="">
                             <img src="assets/icons/star.svg" alt="">
                             <img src="assets/icons/star.svg" alt="">
                             <img src="assets/icons/star.svg" alt="">
-                            <img src="assets/icons/star.svg" alt="">
+                            <img src="assets/icons/star-empty.svg" alt="">
                         </span>
                         </figcaption>
                     </figure>
@@ -402,8 +431,11 @@
                         <p>Placeholder: lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </blockquote>
                         <figcaption class="testimonial-card__author">
-                        <img class="testimonial-card__avatar" src="assets/img/avatar-2.avif" alt=""
-                            width="56" height="56" loading="lazy" decoding="async">
+                        <picture>
+                            <source srcset="assets/img/avatar-2.avif" type="image/avif">
+                            <img class="testimonial-card__avatar" src="assets/img/avatar-2.jpg" alt=""
+                                width="56" height="56" loading="lazy" decoding="async">
+                        </picture>
                         <div>
                             <span class="testimonial-card__name">James Smith</span>
                             <span class="testimonial-card__role">Entrepreneur</span>
@@ -422,18 +454,21 @@
                         <p>Placeholder: lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </blockquote>
                         <figcaption class="testimonial-card__author">
-                        <img class="testimonial-card__avatar" src="assets/img/avatar-3.avif" alt=""
-                            width="56" height="56" loading="lazy" decoding="async">
+                        <picture>
+                            <source srcset="assets/img/avatar-3.avif" type="image/avif">
+                            <img class="testimonial-card__avatar" src="assets/img/avatar-3.jpg" alt=""
+                                width="56" height="56" loading="lazy" decoding="async">
+                        </picture>
                         <div>
                             <span class="testimonial-card__name">James Smith</span>
                             <span class="testimonial-card__role">Entrepreneur</span>
                         </div>
-                        <span class="testimonial-card__rating" role="img" aria-label="5 out of 5 stars">
+                        <span class="testimonial-card__rating" role="img" aria-label="3 out of 5 stars">
                             <img src="assets/icons/star.svg" alt="">
                             <img src="assets/icons/star.svg" alt="">
                             <img src="assets/icons/star.svg" alt="">
-                            <img src="assets/icons/star.svg" alt="">
-                            <img src="assets/icons/star.svg" alt="">
+                            <img src="assets/icons/star-empty.svg" alt="">
+                            <img src="assets/icons/star-empty.svg" alt="">
                         </span>
                         </figcaption>
                     </figure>
@@ -448,15 +483,18 @@
         </section>
         
         <section class="newsletter" aria-labelledby="newsletter-title">
-            <img class="newsletter__img newsletter__img--left" src="assets/img/newsletter-beans.avif" alt=""
-                width="482" height="321" loading="lazy" decoding="async">
+            <picture>
+                <source srcset="assets/img/newsletter-beans.avif" type="image/avif">
+                <img class="newsletter__img newsletter__img--left" src="assets/img/newsletter-beans.jpg" alt=""
+                    width="482" height="321" loading="lazy" decoding="async">
+            </picture>
 
             <div class="newsletter__content">
                 <h2 class="newsletter__title" id="newsletter-title">Join in and get 15% off!</h2>
                 <p class="newsletter__subtitle">Placeholder: newsletter subtitle.</p>
 
                 <form class="newsletter__form" action="#" method="get">
-                <label class="visually-hidden" for="newsletter-email"></label>
+                <label class="visually-hidden" for="newsletter-email">Email address</label>
                 <div class="newsletter__field">
                     <img src="assets/icons/mail.svg" alt="" width="24" height="24">
                     <input class="newsletter__input" id="newsletter-email" type="email"
@@ -466,8 +504,11 @@
                 </form>
             </div>
 
-            <img class="newsletter__img newsletter__img--right" src="assets/img/newsletter-beans.avif" alt=""
-                width="482" height="321" loading="lazy" decoding="async">
+            <picture>
+                <source srcset="assets/img/newsletter-beans.avif" type="image/avif">
+                <img class="newsletter__img newsletter__img--right" src="assets/img/newsletter-beans.jpg" alt=""
+                    width="482" height="321" loading="lazy" decoding="async">
+            </picture>
         </section>
     </main>
     <footer class="footer">
@@ -510,7 +551,7 @@
             </ul>
             </nav>
 
-            <div class="footer__col">
+            <div class="footer__col footer__col--social">
                 <h3 class="footer__heading">Social Media</h3>
                 <ul class="footer__social">
                     <li><a href="#" aria-label="X (Twitter)"><img src="assets/icons/social-1.svg" alt="" width="24" height="24"></a></li>

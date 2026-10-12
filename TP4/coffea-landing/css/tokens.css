@@ -1,3 +1,4 @@
+@layer tokens {
 :root {
     /* colors */
     --color-espresso: #30261C;
@@ -74,4 +75,5 @@
 
 @media (min-width: 64rem) {
     :root { --container-padding: 3rem; }    /* lg: 48 px */
+}
 }

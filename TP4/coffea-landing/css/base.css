@@ -1,3 +1,4 @@
+@layer base {
 /* css/base.css */
 
 /* Reset moderno */
@@ -97,4 +98,5 @@ p {
     animation: none !important;
     scroll-behavior: auto !important;
   }
+}
 }

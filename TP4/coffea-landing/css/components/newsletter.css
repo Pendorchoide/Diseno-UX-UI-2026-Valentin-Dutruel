@@ -1,3 +1,4 @@
+@layer components {
 /* css/components/newsletter.css */
 
 /* Base (mobile): sin granos, input y botón apilados a ancho completo */
@@ -11,6 +12,10 @@
 
 .newsletter__img {
   display: none;                       /* decorativas: ocultas en mobile */
+}
+
+.newsletter picture {
+  display: contents;
 }
 
 .newsletter__content {
@@ -161,4 +166,5 @@
   .newsletter__img {
     width: min(30.125rem, 25vw);       /* 482 px a 1920 */
   }
+}
 }

@@ -1,3 +1,4 @@
+@layer components {
 /* css/components/promo.css */
 
 /* Base (mobile): sin imágenes, texto y botón centrados */
@@ -11,6 +12,10 @@
 
 .promo__img {
   display: none;                      /* decorativas: se ocultan en mobile */
+}
+
+.promo picture {
+  display: contents;
 }
 
 .promo__content {
@@ -106,4 +111,5 @@
     width: min(31.4375rem, 28vw);     /* 503 px a 1920 */
     object-position: left center;
   }
+}
 }

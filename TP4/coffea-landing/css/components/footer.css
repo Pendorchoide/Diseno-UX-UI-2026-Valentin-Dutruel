@@ -1,3 +1,4 @@
+@layer components {
 /* css/components/footer.css */
 
 /* Base (mobile): columnas apiladas, links en 2 × 2 */
@@ -45,6 +46,10 @@
 }
 
 /* Íconos sociales: área táctil de 44 × 44 px */
+.footer__col--social {
+  grid-column: 1 / -1;                 /* mobile: ancho completo, los 4 en una fila */
+}
+
 .footer__social {
   display: flex;
   flex-wrap: wrap;
@@ -83,6 +88,10 @@
   .footer__inner {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .footer__col--social {
+    grid-column: auto;
+  }
 }
 
 /* lg (≥ 1024 px): 6 columnas en fila (logo + 5 columnas) */
@@ -114,4 +123,5 @@
   .footer__col > ul:not(.footer__social) {
     gap: var(--space-24);              /* ver nota sobre los 42 px */
   }
+}
 }

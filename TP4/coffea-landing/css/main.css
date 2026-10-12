@@ -1,19 +1,7 @@
 /* css/main.css */
 
+/* Layer order, declared once. The files are linked directly from index.html
+   (instead of @import) to avoid a serial load chain; each file wraps its rules
+   in its own @layer. */
+
 @layer tokens, base, layout, components, utilities;
-
-@import url("tokens.css") layer(tokens);
-@import url("base.css") layer(base);
-@import url("layout.css") layer(layout);
-
-@import url("components/header.css") layer(components);
-@import url("components/hero.css") layer(components);
-@import url("components/categories.css") layer(components);
-@import url("components/product-card.css") layer(components);
-@import url("components/carousel.css") layer(components);
-@import url("components/promo.css") layer(components);
-@import url("components/testimonial-card.css") layer(components);
-@import url("components/newsletter.css") layer(components);
-@import url("components/footer.css") layer(components);
-
-@import url("utilities.css") layer(utilities);

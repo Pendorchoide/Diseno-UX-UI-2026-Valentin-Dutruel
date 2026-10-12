@@ -1,0 +1,66 @@
+@layer components {
+/* css/components/error-page.css */
+
+.error-page {
+  display: grid;
+  place-items: center;
+  min-height: 60vh;
+  padding-block: 8rem var(--space-56);
+  text-align: center;
+}
+
+.error-page__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+  padding-inline: var(--container-padding);
+}
+
+.error-page__code {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(4rem, 3rem + 8vw, 9rem);
+  line-height: 1;
+  color: var(--color-sand);
+}
+
+.error-page__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-cta);
+  line-height: var(--lh-cta);
+  text-transform: uppercase;
+  color: var(--color-espresso);
+}
+
+.error-page__text {
+  max-width: 26.9375rem;               /* 431 px */
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: var(--lh-md);
+  color: var(--color-muted);
+}
+
+.error-page__button {
+  display: inline-block;
+  margin-top: var(--space-16);
+  padding: var(--space-16) var(--space-40);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-espresso);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-md);
+}
+
+@media (hover: hover) {
+  .error-page__button {
+    transition: transform 200ms ease;
+  }
+
+  .error-page__button:hover {
+    transform: translateY(-2px);
+  }
+}
+}

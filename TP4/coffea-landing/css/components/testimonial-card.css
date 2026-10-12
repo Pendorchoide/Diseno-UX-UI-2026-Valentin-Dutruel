@@ -1,3 +1,4 @@
+@layer components {
 /* css/components/testimonial-card.css */
 
 /* Título de dos líneas: "Come and Join" + "OUR HAPPY CUSTOMERS" */
@@ -57,6 +58,10 @@
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-16);
+}
+
+.testimonial-card__author picture {
+  display: contents;
 }
 
 .testimonial-card__avatar {
@@ -187,4 +192,5 @@
     flex: none;
     margin-left: auto;
   }
+}
 }

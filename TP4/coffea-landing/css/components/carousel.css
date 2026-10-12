@@ -1,3 +1,4 @@
+@layer components {
 /* css/components/carousel.css */
 
 /* Título de las secciones Coffee / Dessert */
@@ -105,4 +106,5 @@
   .carousel__arrow:hover {
     transform: translateY(-2px);
   }
+}
 }

@@ -1,3 +1,4 @@
+@layer components {
 /* css/components/product-card.css */
 
 .product-card {
@@ -25,7 +26,18 @@
   object-fit: cover;
 }
 
-/* Favorito: checkbox oculto + label con el corazón de fondo */
+.product-card__fav-input {
+  position: absolute;
+  top: 0.78125rem;
+  right: 0.78125rem;
+  z-index: 1;
+  width: 2.75rem;                    /* área táctil ≥ 44 px */
+  height: 2.75rem;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
 .product-card__fav {
   position: absolute;
   top: 0.78125rem;                   /* 18 px al ícono (33 px dentro de 44 px) */
@@ -33,7 +45,7 @@
   width: 2.75rem;                    /* área táctil ≥ 44 px */
   height: 2.75rem;
   background: url("../../assets/icons/heart.svg") center / 2.0625rem no-repeat;  /* 33 px */
-  cursor: pointer;
+  pointer-events: none;
 }
 
 .product-card__fav-input:checked + .product-card__fav {
@@ -109,4 +121,5 @@
   .product-card__button:hover {
     transform: translateY(-2px);
   }
+}
 }
