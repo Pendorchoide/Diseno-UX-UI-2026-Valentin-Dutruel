@@ -67,10 +67,22 @@
 /* xl (≥ 1440 px): medidas del Figma + flechas */
 @media (min-width: 90rem) {
   .carousel {
-    /* 1476 px de ancho, centrado aunque el container mida 1444 px */
-    --carousel-width: min(92.25rem, 100vw - 2 * var(--container-padding));
-    width: var(--carousel-width);
-    margin-left: calc(50% - var(--carousel-width) / 2);
+    --carousel-arrow-offset: 5rem;     /* 80 px desde el borde de la ventana */
+    --carousel-arrow-size: 4.4375rem;  /* 71 px */
+    --carousel-bleed: max(
+      var(--container-padding),
+      calc((100vw - var(--container)) / 2)
+    );
+    width: calc(100% + var(--carousel-bleed) + var(--carousel-bleed));
+    margin-left: calc(0px - var(--carousel-bleed));
+  }
+
+  .carousel__track {
+    width: min(
+      92.25rem,
+      calc(100vw - 27.75rem)           /* 222 px por lado a 1920 px */
+    );
+    margin-inline: auto;
   }
 
   .carousel__item {
@@ -83,18 +95,24 @@
     z-index: 1;
     display: grid;
     place-items: center;
-    width: 4.4375rem;                 /* 71 px */
-    height: 4.4375rem;
+    width: var(--carousel-arrow-size);
+    height: var(--carousel-arrow-size);
     translate: 0 -50%;                /* centrado vertical sin pisar el transform del hover */
+    border-radius: var(--radius-circle);
+    background-color: var(--color-sand);
   }
 
-  /* 80 px del borde de la ventana (no del carrusel) */
+  .carousel__arrow img {
+    width: 2.125rem;                  /* 34 px */
+    height: 2.125rem;
+  }
+
   .carousel__arrow--prev {
-    left: calc(80px + (100% - 100vw) / 2);
+    left: var(--carousel-arrow-offset);
   }
 
   .carousel__arrow--next {
-    right: calc(80px + (100% - 100vw) / 2);
+    right: var(--carousel-arrow-offset);
   }
 }
 
