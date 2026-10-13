@@ -163,6 +163,10 @@
 
 /* xl (≥ 1440 px): tamaño del Figma */
 @media (min-width: 90rem) {
+  .newsletter {
+    height: 30rem;                     /* 480 px: frame Figma */
+  }
+
   .newsletter__img {
     width: min(30.125rem, 25vw);       /* 482 px a 1920 */
   }

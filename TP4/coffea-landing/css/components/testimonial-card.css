@@ -61,10 +61,12 @@
 }
 
 .testimonial-card__author picture {
-  display: contents;
+  display: block;
+  flex: none;
 }
 
 .testimonial-card__avatar {
+  display: block;
   flex: none;
   width: 3.5rem;                       /* 56 px */
   height: 3.5rem;

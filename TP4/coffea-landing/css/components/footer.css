@@ -21,6 +21,7 @@
   font-weight: 700;
   font-size: var(--fs-logo);
   line-height: 1;
+  text-transform: lowercase;
 }
 
 .footer__heading {

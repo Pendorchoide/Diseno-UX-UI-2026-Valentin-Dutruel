@@ -24,4 +24,14 @@
 .testimonials {
   padding-block: var(--space-56);
 }
+
+@media (min-width: 90rem) {
+  .products {
+    padding-block: var(--space-28);
+  }
+
+  .testimonials {
+    padding-block: 2rem;
+  }
+}
 }

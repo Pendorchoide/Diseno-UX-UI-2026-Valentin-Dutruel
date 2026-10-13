@@ -66,15 +66,15 @@
 
 /* xl (≥ 1440 px): medidas del Figma + flechas */
 @media (min-width: 90rem) {
+  .products > .container {
+    width: 100%;
+    max-width: none;
+  }
+
   .carousel {
     --carousel-arrow-offset: 5rem;     /* 80 px desde el borde de la ventana */
     --carousel-arrow-size: 4.4375rem;  /* 71 px */
-    --carousel-bleed: max(
-      var(--container-padding),
-      calc((100vw - var(--container)) / 2)
-    );
-    width: calc(100% + var(--carousel-bleed) + var(--carousel-bleed));
-    margin-left: calc(0px - var(--carousel-bleed));
+    width: 100%;
   }
 
   .carousel__track {
