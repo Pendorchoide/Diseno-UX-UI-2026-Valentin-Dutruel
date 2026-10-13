@@ -193,6 +193,7 @@
   .testimonial-card__rating {
     flex: none;
     margin-left: auto;
+    transform: translateY(-0.625rem);
   }
 }
 }
