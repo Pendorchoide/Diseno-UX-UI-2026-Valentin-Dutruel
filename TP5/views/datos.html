@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f7fb" />
+    <title>Tus datos | Cubrí</title>
+  </head>
+  <body>
+    <div class="status-bar" aria-hidden="true"><span>9:41</span><span class="status-signal">5G<img src="/src/assets/figma/signal-mobile.svg" alt="" /></span></div>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Cubrí, inicio"><span class="brand-mark" aria-hidden="true"><img src="/src/assets/figma/logo-mark.svg" alt="" /></span><span>Cubrí</span></a>
+      <nav class="site-nav" aria-label="Navegación principal"><a href="#">Seguros</a><a href="#">Siniestros</a><a href="mailto:hola@cubriseguros.com">Ayuda</a><a class="account-link" href="#">Mi cuenta</a></nav>
+    </header>
+    <div class="mobile-view-header"><a class="back-arrow" href="/views/planes.html" aria-label="Volver">‹</a><span>Tus datos</span></div>
+    <main class="flow-page">
+      <div class="page-heading customer-heading"><span class="eyebrow desktop-only">Seguro de Celular</span><h1>Tus datos</h1></div>
+      <nav class="stepper" aria-label="Progreso de contratación"><ol>
+        <li class="step-item step-complete"><span class="step-number">✓</span><span>Cotizar</span></li>
+        <li class="step-item step-complete"><span class="step-number">✓</span><span>Plan</span></li>
+        <li class="step-item step-active" aria-current="step"><span class="step-number">3</span><span>Datos</span></li>
+        <li class="step-item"><span class="step-number">4</span><span>Pago</span></li>
+      </ol></nav>
+      <div class="checkout-layout customer-layout">
+        <section class="checkout-main">
+          <form class="checkout-form">
+            <div class="form-grid customer-grid">
+              <div class="field"><label for="nombre">Nombre</label><input id="nombre" value="Juan" /></div>
+              <div class="field"><label for="apellido">Apellido</label><input id="apellido" value="Pérez" /></div>
+              <div class="field"><label for="dni">DNI</label><input id="dni" inputmode="numeric" value="30123456" /></div>
+              <div class="field"><label for="nacimiento">Nacimiento</label><input id="nacimiento" placeholder="dd/mm/aaaa" /></div>
+              <div class="field field-full"><label for="email">Email</label><input id="email" type="email" aria-invalid="true" aria-describedby="email-error" value="juan.perez@" /><p class="field-error" id="email-error">Ingresá un email válido</p></div>
+              <div class="field field-full"><label for="celular">Celular</label><input id="celular" type="tel" value="11 5555-1234" /></div>
+              <label class="terms-row"><input type="checkbox" checked /> <span>Acepto los términos y condiciones y la política de privacidad.</span></label>
+            </div>
+            <div class="form-actions desktop-actions"><a class="btn btn-secondary" href="/views/planes.html">Volver</a><span class="disabled-message">Completá los campos con error para continuar</span><button class="btn btn-disabled" type="button" disabled>Continuar al pago</button></div>
+          </form>
+        </section>
+        <aside class="checkout-aside summary-card">
+          <h2 class="summary-title">Resumen</h2>
+          <div class="summary-line"><span>Seguro</span><strong>Celular</strong></div>
+          <div class="summary-line"><span>Equipo</span><strong>Samsung Galaxy A55</strong></div>
+          <div class="summary-line"><span>Plan</span><strong>Plus</strong></div>
+          <div class="summary-rule"></div>
+          <div class="summary-line"><span>Total mensual</span><strong>$ 3.000</strong></div>
+          <p class="summary-note">◯ Contratación 100% online · cancelás cuando quieras</p>
+        </aside>
+      </div>
+    </main>
+    <div class="mobile-actionbar"><button class="btn btn-disabled" type="button" disabled>Continuar al pago</button><span class="disabled-message">El botón se habilita cuando el formulario es válido</span></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

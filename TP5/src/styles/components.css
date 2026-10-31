@@ -1,0 +1,235 @@
+.site-header {
+  display: flex;
+  height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding: 0 max(32px, calc((100% - 1280px) / 2));
+  background: var(--surface);
+}
+
+.brand,
+.site-nav,
+.mobile-view-header {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  gap: 8px;
+  color: var(--primary);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
+}
+
+.brand-mark img {
+  width: 16px;
+  height: 16px;
+}
+
+.site-nav {
+  gap: 32px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.site-nav .account-link {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.status-bar,
+.mobile-view-header {
+  display: none;
+}
+
+.btn {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid var(--primary);
+  border-radius: 12px;
+  padding: 0 22px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--primary-700);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-50);
+}
+
+.btn:disabled,
+.btn-disabled {
+  border-color: #cbd5e1;
+  background: #cbd5e1;
+  color: white;
+  cursor: not-allowed;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field label,
+.field legend {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  height: 48px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: 0;
+  padding: 0 14px;
+  background: white;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-position: right 14px center;
+  background-repeat: no-repeat;
+  padding-right: 40px;
+}
+
+.field input:focus,
+.field select:focus {
+  border: 2px solid var(--primary);
+}
+
+.field input[aria-invalid="true"] {
+  border: 2px solid var(--error);
+  background: #fff5f5;
+}
+
+.field-hint,
+.field-error {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.field-hint {
+  color: var(--muted);
+}
+
+.field-error {
+  color: var(--error);
+}
+
+.stepper {
+  width: 100%;
+  margin: 0 0 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 20px;
+  background: white;
+}
+
+.stepper ol {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step-item {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 0;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.step-item:not(:last-child)::after {
+  height: 1px;
+  flex: 1;
+  margin: 0 10px;
+  background: var(--border);
+  content: "";
+}
+
+.step-number {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  place-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 50%;
+  background: white;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.step-active {
+  color: var(--primary);
+}
+
+.step-active .step-number {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: white;
+}
+
+.step-complete {
+  color: var(--success);
+}
+
+.step-complete .step-number {
+  border-color: var(--success);
+  background: var(--success);
+  color: white;
+}
+
+.mobile-actionbar {
+  display: none;
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f7fb" />
+    <title>Pago | Cubrí</title>
+  </head>
+  <body>
+    <div class="status-bar" aria-hidden="true"><span>9:41</span><span class="status-signal">5G<img src="/src/assets/figma/signal-mobile.svg" alt="" /></span></div>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Cubrí, inicio"><span class="brand-mark" aria-hidden="true"><img src="/src/assets/figma/logo-mark.svg" alt="" /></span><span>Cubrí</span></a>
+      <nav class="site-nav" aria-label="Navegación principal"><a href="#">Seguros</a><a href="#">Siniestros</a><a href="mailto:hola@cubriseguros.com">Ayuda</a><a class="account-link" href="#">Mi cuenta</a></nav>
+    </header>
+    <div class="mobile-view-header"><a class="back-arrow" href="/views/datos.html" aria-label="Volver">‹</a><span>Pago</span></div>
+    <main class="flow-page">
+      <div class="page-heading payment-heading"><span class="eyebrow desktop-only">Seguro de Celular</span><h1>Pago</h1></div>
+      <nav class="stepper" aria-label="Progreso de contratación"><ol>
+        <li class="step-item step-complete"><span class="step-number">✓</span><span>Cotizar</span></li>
+        <li class="step-item step-complete"><span class="step-number">✓</span><span>Plan</span></li>
+        <li class="step-item step-complete"><span class="step-number">✓</span><span>Datos</span></li>
+        <li class="step-item step-active" aria-current="step"><span class="step-number">4</span><span>Pago</span></li>
+      </ol></nav>
+      <div class="checkout-layout payment-layout">
+        <section class="checkout-main">
+          <form class="checkout-form payment-form">
+            <div class="mobile-payment-summary">
+              <div class="summary-line"><span>Seguro</span><strong>Celular · Plan Plus</strong></div>
+              <div class="summary-line"><span>Equipo</span><strong>Samsung Galaxy A55</strong></div>
+              <div class="summary-line"><span>Titular</span><strong>Juan Pérez</strong></div>
+              <div class="summary-total"><span>Total mensual</span><strong>$ 3.000</strong></div>
+            </div>
+            <fieldset class="field payment-fieldset" id="medio-de-pago"><legend class="desktop-only">Medio de pago</legend><div class="payment-methods">
+              <label class="method-option"><input type="radio" name="metodo" checked /><span class="method-radio"></span><span>Tarjeta de crédito</span></label>
+              <label class="method-option"><input type="radio" name="metodo" /><span class="method-radio"></span><span>Tarjeta de débito</span></label>
+            </div></fieldset>
+            <div class="payment-grid">
+              <div class="field card-number-field"><label for="tarjeta">Número de tarjeta</label><input id="tarjeta" inputmode="numeric" value="4111 1111 1111 1111" /></div>
+              <div class="field"><label for="vencimiento">Vencimiento</label><input id="vencimiento" value="12/28" /></div>
+              <div class="field"><label for="cvv">CVV</label><input id="cvv" value="•••" /></div>
+              <div class="field desktop-only"><label for="titular">Titular</label><input id="titular" value="JUAN PEREZ" /></div>
+            </div>
+            <p class="simulation-note"><span class="desktop-only">Simulación: no se procesan pagos reales. Usá la tarjeta de prueba 4111 1111 1111 1111 → aprobado · 4000 0000 0000 0002 → rechazado.</span><span class="mobile-only">Simulación: no se procesan pagos reales. Usá la tarjeta de prueba 4111...</span></p>
+            <div class="form-actions desktop-actions"><a class="btn btn-secondary" href="/views/datos.html">Volver</a><a class="btn" href="/views/exito.html">Pagar y contratar</a></div>
+          </form>
+        </section>
+        <aside class="checkout-aside summary-card">
+          <h2 class="summary-title">Resumen de tu seguro</h2>
+          <div class="summary-line"><span>Seguro</span><strong>Celular</strong></div>
+          <div class="summary-line"><span>Equipo</span><strong>Samsung Galaxy A55</strong></div>
+          <div class="summary-line"><span>Plan</span><strong>Plus</strong></div>
+          <div class="summary-line"><span>Titular</span><strong>Juan Pérez</strong></div>
+          <div class="summary-rule"></div>
+          <div class="summary-line"><span>Total mensual</span><strong>$ 3.000</strong></div>
+          <p class="summary-note">◯ Contratación 100% online · cancelás cuando quieras</p>
+        </aside>
+      </div>
+    </main>
+    <div class="mobile-actionbar"><a class="btn" href="/views/exito.html">Pagar y contratar</a></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

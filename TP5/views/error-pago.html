@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f7fb" />
+    <title>Error de pago | Cubrí</title>
+  </head>
+  <body>
+    <div class="status-bar" aria-hidden="true"><span>9:41</span><span class="status-signal">5G<img src="/src/assets/figma/signal-mobile.svg" alt="" /></span></div>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Cubrí, inicio"><span class="brand-mark" aria-hidden="true"><img src="/src/assets/figma/logo-mark.svg" alt="" /></span><span>Cubrí</span></a>
+      <nav class="site-nav" aria-label="Navegación principal"><a href="#">Seguros</a><a href="#">Siniestros</a><a href="mailto:hola@cubriseguros.com">Ayuda</a><a class="account-link" href="#">Mi cuenta</a></nav>
+    </header>
+    <main class="result-page">
+      <section class="result-card error-card" aria-labelledby="error-title">
+        <div class="result-icon error-icon" aria-hidden="true"><picture><source media="(max-width: 760px)" srcset="/src/assets/figma/error-mobile.svg" /><img src="/src/assets/figma/error.svg" alt="" /></picture></div>
+        <div class="result-body">
+          <h1 id="error-title">No pudimos procesar el pago</h1>
+          <p class="result-lead">La tarjeta fue rechazada. Revisá los datos o probá con otro medio de pago. Tus datos quedaron guardados.</p>
+          <p class="error-note">Tarjeta de prueba que fuerza el error: 4000 0000 0000 0002</p>
+        </div>
+        <div class="result-actions"><a class="btn" href="/views/pago.html">Reintentar pago</a><a class="btn btn-secondary" href="/views/pago.html#medio-de-pago">Cambiar medio de pago</a></div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

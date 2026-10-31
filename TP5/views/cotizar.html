@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f7fb" />
+    <title>Cotizá tu seguro | Cubrí</title>
+  </head>
+  <body>
+    <div class="status-bar" aria-hidden="true"><span>9:41</span><span class="status-signal">5G<img src="/src/assets/figma/signal-mobile.svg" alt="" /></span></div>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Cubrí, inicio"><span class="brand-mark" aria-hidden="true"><img src="/src/assets/figma/logo-mark.svg" alt="" /></span><span>Cubrí</span></a>
+      <nav class="site-nav" aria-label="Navegación principal"><a href="#">Seguros</a><a href="#">Siniestros</a><a href="mailto:hola@cubriseguros.com">Ayuda</a><a class="account-link" href="#">Mi cuenta</a></nav>
+    </header>
+    <div class="mobile-view-header"><a class="back-arrow" href="/" aria-label="Volver">‹</a><span>Cotizá tu seguro</span></div>
+    <main class="flow-page">
+      <div class="page-heading"><span class="eyebrow desktop-only">Seguro de Celular</span><h1>Contanos sobre tu celular</h1></div>
+      <nav class="stepper" aria-label="Progreso de contratación"><ol>
+        <li class="step-item step-active" aria-current="step"><span class="step-number">1</span><span>Cotizar</span></li>
+        <li class="step-item"><span class="step-number">2</span><span>Plan</span></li>
+        <li class="step-item"><span class="step-number">3</span><span>Datos</span></li>
+        <li class="step-item"><span class="step-number">4</span><span>Pago</span></li>
+      </ol></nav>
+      <div class="checkout-layout quote-layout">
+        <section class="checkout-main">
+          <form class="checkout-form">
+            <div class="form-grid quote-grid">
+              <div class="field"><label for="marca">Marca</label><select id="marca" name="marca"><option>Samsung</option><option>Apple</option><option>Motorola</option></select></div>
+              <div class="field"><label for="modelo">Modelo</label><input id="modelo" name="modelo" value="Galaxy A55" /></div>
+              <div class="field"><label for="valor">Valor del equipo</label><div class="prefix-field"><span>$</span><input id="valor" name="valor" value="600.000" /></div><p class="field-hint">Entre $100.000 y $2.500.000</p></div>
+              <fieldset class="field age-field"><legend>Antigüedad</legend><div class="age-options">
+                <label class="age-option"><input type="radio" name="antiguedad" checked /><span>Menos de 1 año</span></label>
+                <label class="age-option"><input type="radio" name="antiguedad" /><span>1 a 2 años</span></label>
+                <label class="age-option"><input type="radio" name="antiguedad" /><span>+2 años</span></label>
+              </div></fieldset>
+            </div>
+            <div class="form-actions desktop-actions"><span></span><a class="btn" href="/views/planes.html">Ver planes</a></div>
+          </form>
+        </section>
+        <aside class="checkout-aside summary-card">
+          <h2 class="summary-title">Resumen</h2>
+          <div class="summary-line"><span>Seguro</span><strong>Celular</strong></div>
+          <div class="summary-line"><span>Equipo</span><strong>Samsung Galaxy A55</strong></div>
+          <div class="summary-line"><span>Valor</span><strong>$ 600.000</strong></div>
+          <div class="summary-rule"></div>
+          <p class="summary-note">Completá los datos del equipo para ver el precio.</p>
+          <p class="summary-note">◯ Contratación 100% online · cancelás cuando quieras</p>
+        </aside>
+      </div>
+    </main>
+    <div class="mobile-actionbar"><a class="btn" href="/views/planes.html">Ver planes</a></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

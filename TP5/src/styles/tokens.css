@@ -1,0 +1,16 @@
+:root {
+  color-scheme: light;
+  --primary: #4f46e5;
+  --primary-foreground: #ffffff;
+  --primary-700: #3730a3;
+  --primary-50: #eef2ff;
+  --success: #059669;
+  --error: #dc2626;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --radius: 12px;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
