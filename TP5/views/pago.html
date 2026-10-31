@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#f5f7fb" />
     <title>Pago | Cubrí</title>
   </head>
-  <body>
+  <body data-step="4">
     <div class="status-bar" aria-hidden="true"><span>9:41</span><span class="status-signal">5G<img src="/src/assets/figma/signal-mobile.svg" alt="" /></span></div>
     <header class="site-header">
       <a class="brand" href="/" aria-label="Cubrí, inicio"><span class="brand-mark" aria-hidden="true"><img src="/src/assets/figma/logo-mark.svg" alt="" /></span><span>Cubrí</span></a>
@@ -23,40 +23,40 @@
       </ol></nav>
       <div class="checkout-layout payment-layout">
         <section class="checkout-main">
-          <form class="checkout-form payment-form">
+          <form class="checkout-form payment-form" id="payment-form" novalidate>
             <div class="mobile-payment-summary">
-              <div class="summary-line"><span>Seguro</span><strong>Celular · Plan Plus</strong></div>
-              <div class="summary-line"><span>Equipo</span><strong>Samsung Galaxy A55</strong></div>
-              <div class="summary-line"><span>Titular</span><strong>Juan Pérez</strong></div>
-              <div class="summary-total"><span>Total mensual</span><strong>$ 3.000</strong></div>
+              <div class="summary-line"><span>Seguro</span><strong data-output="mobile-product-plan">Celular · Plan Plus</strong></div>
+              <div class="summary-line"><span>Equipo</span><strong data-output="device">Samsung Galaxy A55</strong></div>
+              <div class="summary-line"><span>Titular</span><strong data-output="customer-name">Juan Pérez</strong></div>
+              <div class="summary-total"><span>Total mensual</span><strong data-output="monthly-price">$ 3.000</strong></div>
             </div>
             <fieldset class="field payment-fieldset" id="medio-de-pago"><legend class="desktop-only">Medio de pago</legend><div class="payment-methods">
-              <label class="method-option"><input type="radio" name="metodo" checked /><span class="method-radio"></span><span>Tarjeta de crédito</span></label>
-              <label class="method-option"><input type="radio" name="metodo" /><span class="method-radio"></span><span>Tarjeta de débito</span></label>
+              <label class="method-option"><input type="radio" name="metodo" value="credito" checked /><span class="method-radio"></span><span>Tarjeta de crédito</span></label>
+              <label class="method-option"><input type="radio" name="metodo" value="debito" /><span class="method-radio"></span><span>Tarjeta de débito</span></label>
             </div></fieldset>
             <div class="payment-grid">
-              <div class="field card-number-field"><label for="tarjeta">Número de tarjeta</label><input id="tarjeta" inputmode="numeric" value="4111 1111 1111 1111" /></div>
-              <div class="field"><label for="vencimiento">Vencimiento</label><input id="vencimiento" value="12/28" /></div>
-              <div class="field"><label for="cvv">CVV</label><input id="cvv" value="•••" /></div>
-              <div class="field desktop-only"><label for="titular">Titular</label><input id="titular" value="JUAN PEREZ" /></div>
+              <div class="field card-number-field"><label for="tarjeta">Número de tarjeta</label><input id="tarjeta" name="cardNumber" inputmode="numeric" autocomplete="cc-number" value="4111 1111 1111 1111" required aria-describedby="tarjeta-error" /><p class="field-error" id="tarjeta-error" role="alert" hidden>Número de tarjeta inválido</p></div>
+              <div class="field desktop-only"><label for="titular">Titular</label><input id="titular" name="cardholder" autocomplete="cc-name" value="JUAN PEREZ" required aria-describedby="titular-error" /><p class="field-error" id="titular-error" role="alert" hidden>Ingresá el nombre del titular</p></div>
+              <div class="field"><label for="vencimiento">Vencimiento</label><input id="vencimiento" name="expiry" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/AA" value="12/28" required aria-describedby="vencimiento-error" /><p class="field-error" id="vencimiento-error" role="alert" hidden>Vencimiento inválido</p></div>
+              <div class="field"><label for="cvv">CVV</label><input id="cvv" name="cvv" inputmode="numeric" autocomplete="cc-csc" placeholder="123" required aria-describedby="cvv-error" /><p class="field-error" id="cvv-error" role="alert" hidden>CVV inválido</p></div>
             </div>
             <p class="simulation-note"><span class="desktop-only">Simulación: no se procesan pagos reales. Usá la tarjeta de prueba 4111 1111 1111 1111 → aprobado · 4000 0000 0000 0002 → rechazado.</span><span class="mobile-only">Simulación: no se procesan pagos reales. Usá la tarjeta de prueba 4111...</span></p>
-            <div class="form-actions desktop-actions"><a class="btn btn-secondary" href="/views/datos.html">Volver</a><a class="btn" href="/views/exito.html">Pagar y contratar</a></div>
+            <div class="form-actions desktop-actions"><a class="btn btn-secondary" href="/views/datos.html">Volver</a><button class="btn" type="submit">Pagar y contratar</button></div>
           </form>
         </section>
         <aside class="checkout-aside summary-card">
           <h2 class="summary-title">Resumen de tu seguro</h2>
           <div class="summary-line"><span>Seguro</span><strong>Celular</strong></div>
-          <div class="summary-line"><span>Equipo</span><strong>Samsung Galaxy A55</strong></div>
-          <div class="summary-line"><span>Plan</span><strong>Plus</strong></div>
-          <div class="summary-line"><span>Titular</span><strong>Juan Pérez</strong></div>
+          <div class="summary-line"><span>Equipo</span><strong data-output="device">Samsung Galaxy A55</strong></div>
+          <div class="summary-line"><span>Plan</span><strong data-output="plan">Plus</strong></div>
+          <div class="summary-line"><span>Titular</span><strong data-output="customer-name">Juan Pérez</strong></div>
           <div class="summary-rule"></div>
-          <div class="summary-line"><span>Total mensual</span><strong>$ 3.000</strong></div>
-          <p class="summary-note">◯ Contratación 100% online · cancelás cuando quieras</p>
+          <div class="summary-line"><span>Total mensual</span><strong data-output="monthly-price">$ 3.000</strong></div>
+          <p class="summary-note"><svg class="summary-security-icon" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 1.5 17 4v5.3c0 4.1-2.9 7.6-7 9.2-4.1-1.6-7-5.1-7-9.2V4l7-2.5Z"/><path d="m6.8 9.6 2.1 2.1 4.4-4.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/></svg><span>Contratación 100% online · cancelás cuando quieras</span></p>
         </aside>
       </div>
     </main>
-    <div class="mobile-actionbar"><a class="btn" href="/views/exito.html">Pagar y contratar</a></div>
+    <div class="mobile-actionbar"><button class="btn" type="submit" form="payment-form">Pagar y contratar</button></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#f5f7fb" />
     <title>Elegí tu plan | Cubrí</title>
   </head>
-  <body>
+  <body data-step="2">
     <div class="status-bar" aria-hidden="true"><span>9:41</span><span class="status-signal">5G<img src="/src/assets/figma/signal-mobile.svg" alt="" /></span></div>
     <header class="site-header">
       <a class="brand" href="/" aria-label="Cubrí, inicio"><span class="brand-mark" aria-hidden="true"><img src="/src/assets/figma/logo-mark.svg" alt="" /></span><span>Cubrí</span></a>
@@ -23,27 +23,30 @@
       </ol></nav>
       <div class="checkout-layout plan-layout">
         <section class="checkout-main">
-          <div class="plan-grid">
-            <label class="plan-card plan-basic"><input type="radio" name="plan" /><span class="plan-topline"><span class="plan-name">Básico</span><span class="plan-radio-mark"></span></span><span class="plan-price"><strong>$ 2.000</strong><span>/ mes</span></span><span class="plan-rule"></span><span class="plan-cover"><b class="coverage-check">✓</b> Robo con violencia</span><span class="plan-cover coverage-missing"><b>×</b> Rotura de pantalla</span></label>
-            <label class="plan-card"><input type="radio" name="plan" checked /><span class="plan-badge">Recomendado</span><span class="plan-topline"><span class="plan-name">Plus</span><span class="plan-radio-mark"></span></span><span class="plan-price"><strong>$ 3.000</strong><span>/ mes</span></span><span class="plan-rule"></span><span class="plan-cover"><b class="coverage-check">✓</b> Robo con violencia</span><span class="plan-cover"><b class="coverage-check">✓</b> Rotura de pantalla</span><span class="plan-cover coverage-missing"><b>×</b> Hurto / pérdida</span></label>
-            <label class="plan-card plan-premium"><input type="radio" name="plan" /><span class="plan-topline"><span class="plan-name">Premium</span><span class="plan-radio-mark"></span></span><span class="plan-price"><strong>$ 4.500</strong><span>/ mes</span></span><span class="plan-rule"></span><span class="plan-cover"><b class="coverage-check">✓</b> Robo + rotura total</span><span class="plan-cover desktop-only"><b class="coverage-check">✓</b> Rotura de pantalla</span><span class="plan-cover"><b class="coverage-check">✓</b> Hurto / pérdida</span></label>
+          <p class="field-error" data-plan-load-error role="alert" hidden>No se pudieron cargar los planes. Actualizá la página para volver a intentar.</p>
+          <div class="plan-selection">
+            <div class="plan-grid">
+            <label class="plan-card plan-basic"><input type="radio" name="plan" value="basico" /><span class="plan-topline"><span class="plan-name">Básico</span><span class="plan-radio-mark"></span></span><span class="plan-price"><strong data-plan-price="basico">$ 2.000</strong><span>/ mes</span></span><span class="plan-rule"></span><span class="plan-cover"><b class="coverage-check">✓</b> Robo con violencia</span><span class="plan-cover coverage-missing"><b>×</b> Rotura de pantalla</span></label>
+            <label class="plan-card"><input type="radio" name="plan" value="plus" checked /><span class="plan-badge">Recomendado</span><span class="plan-topline"><span class="plan-name">Plus</span><span class="plan-radio-mark"></span></span><span class="plan-price"><strong data-plan-price="plus">$ 3.000</strong><span>/ mes</span></span><span class="plan-rule"></span><span class="plan-cover"><b class="coverage-check">✓</b> Robo con violencia</span><span class="plan-cover"><b class="coverage-check">✓</b> Rotura de pantalla</span><span class="plan-cover coverage-missing"><b>×</b> Hurto / pérdida</span></label>
+            <label class="plan-card plan-premium"><input type="radio" name="plan" value="premium" /><span class="plan-topline"><span class="plan-name">Premium</span><span class="plan-radio-mark"></span></span><span class="plan-price"><strong data-plan-price="premium">$ 4.500</strong><span>/ mes</span></span><span class="plan-rule"></span><span class="plan-cover"><b class="coverage-check">✓</b> Robo + rotura total</span><span class="plan-cover desktop-only"><b class="coverage-check">✓</b> Rotura de pantalla</span><span class="plan-cover"><b class="coverage-check">✓</b> Hurto / pérdida</span></label>
+            </div>
+            <p class="plan-footnote">ⓘ El valor mensual se calcula según el valor y la antigüedad de tu equipo.</p>
+            <div class="form-actions desktop-actions plan-actions"><a class="btn btn-secondary" href="/views/cotizar.html">Volver</a><a class="btn" href="/views/datos.html">Continuar</a></div>
           </div>
-          <p class="plan-footnote">ⓘ El valor mensual se calcula según el valor y la antigüedad de tu equipo.</p>
-          <div class="form-actions desktop-actions plan-actions"><a class="btn btn-secondary" href="/views/cotizar.html">Volver</a><a class="btn" href="/views/datos.html">Continuar</a></div>
         </section>
         <aside class="checkout-aside summary-card plan-aside">
-          <h2 class="summary-title">Tu resumen</h2>
+          <h2 class="summary-title">Resumen</h2>
           <div class="summary-line"><span>Seguro</span><strong>Celular</strong></div>
-          <div class="summary-line"><span>Equipo</span><strong>Samsung Galaxy A55</strong></div>
-          <div class="summary-line"><span>Valor asegurado</span><strong>$ 600.000</strong></div>
-          <div class="summary-line"><span>Plan</span><strong>Plus</strong></div>
+          <div class="summary-line"><span>Equipo</span><strong data-output="device">Samsung Galaxy A55</strong></div>
+          <div class="summary-line"><span>Valor asegurado</span><strong data-output="insured-value">$ 600.000</strong></div>
+          <div class="summary-line"><span>Plan</span><strong data-output="plan">Plus</strong></div>
           <div class="summary-rule"></div>
-          <div class="summary-line"><span>Total mensual</span><strong>$ 3.000</strong></div>
-          <p class="summary-note">◯ Contratación 100% online · cancelás cuando quieras</p>
+          <div class="summary-line"><span>Total mensual</span><strong data-output="monthly-price">$ 3.000</strong></div>
+          <p class="summary-note"><svg class="summary-security-icon" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 1.5 17 4v5.3c0 4.1-2.9 7.6-7 9.2-4.1-1.6-7-5.1-7-9.2V4l7-2.5Z"/><path d="m6.8 9.6 2.1 2.1 4.4-4.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/></svg><span>Contratación 100% online · cancelás cuando quieras</span></p>
         </aside>
       </div>
     </main>
-    <div class="mobile-actionbar"><div class="plan-mobile-total"><span>Plan Plus · Galaxy A55</span><strong>$ 3.000/mes</strong></div><a class="btn" href="/views/datos.html">Continuar</a></div>
+    <div class="mobile-actionbar"><div class="plan-mobile-total"><span data-output="mobile-plan">Plan Plus · Galaxy A55</span><strong data-output="mobile-price">$ 3.000/mes</strong></div><a class="btn" href="/views/datos.html">Continuar</a></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

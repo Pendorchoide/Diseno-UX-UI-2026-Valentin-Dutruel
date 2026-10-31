@@ -145,6 +145,20 @@
   background: #fff5f5;
 }
 
+.field[data-invalid] input,
+.field[data-invalid] select {
+  border: 2px solid var(--error);
+  background: #fff5f5;
+}
+
+.terms-field[data-invalid] .terms-row {
+  color: var(--error);
+}
+
+.age-field[data-invalid] legend {
+  color: var(--error);
+}
+
 .field-hint,
 .field-error {
   margin: 0;
@@ -170,33 +184,47 @@
 }
 
 .stepper ol {
-  display: flex;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: center;
-  justify-content: space-between;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+.stepper ol::before {
+  position: absolute;
+  top: 50%;
+  right: 12.5%;
+  left: 12.5%;
+  height: 1px;
+  background: var(--border);
+  content: "";
+  transform: translateY(-50%);
+}
+
 .step-item {
+  position: relative;
   display: flex;
   min-width: 0;
-  flex: 1 1 0;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   color: var(--muted);
   font-size: 13px;
 }
 
-.step-item:not(:last-child)::after {
-  height: 1px;
-  flex: 1;
-  margin: 0 10px;
-  background: var(--border);
-  content: "";
+.step-item > span:not(.step-number) {
+  position: relative;
+  z-index: 1;
+  padding: 0 3px;
+  background: white;
 }
 
 .step-number {
+  position: relative;
+  z-index: 1;
   display: grid;
   width: 22px;
   height: 22px;
@@ -228,6 +256,40 @@
   border-color: var(--success);
   background: var(--success);
   color: white;
+}
+
+.terms-row input {
+  appearance: none;
+  display: grid;
+  place-content: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+}
+
+.terms-row input::after {
+  width: 9px;
+  height: 5px;
+  border-bottom: 2px solid white;
+  border-left: 2px solid white;
+  content: "";
+  opacity: 0;
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.terms-row input:checked {
+  border-color: var(--primary);
+  background: var(--primary);
+}
+
+.terms-row input:checked::after {
+  opacity: 1;
+}
+
+.terms-row input:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 .mobile-actionbar {

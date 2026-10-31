@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#f5f7fb" />
     <title>Tus datos | Cubrí</title>
   </head>
-  <body>
+  <body data-step="3">
     <div class="status-bar" aria-hidden="true"><span>9:41</span><span class="status-signal">5G<img src="/src/assets/figma/signal-mobile.svg" alt="" /></span></div>
     <header class="site-header">
       <a class="brand" href="/" aria-label="Cubrí, inicio"><span class="brand-mark" aria-hidden="true"><img src="/src/assets/figma/logo-mark.svg" alt="" /></span><span>Cubrí</span></a>
@@ -23,31 +23,31 @@
       </ol></nav>
       <div class="checkout-layout customer-layout">
         <section class="checkout-main">
-          <form class="checkout-form">
+          <form class="checkout-form" id="customer-form" novalidate>
             <div class="form-grid customer-grid">
-              <div class="field"><label for="nombre">Nombre</label><input id="nombre" value="Juan" /></div>
-              <div class="field"><label for="apellido">Apellido</label><input id="apellido" value="Pérez" /></div>
-              <div class="field"><label for="dni">DNI</label><input id="dni" inputmode="numeric" value="30123456" /></div>
-              <div class="field"><label for="nacimiento">Nacimiento</label><input id="nacimiento" placeholder="dd/mm/aaaa" /></div>
-              <div class="field field-full"><label for="email">Email</label><input id="email" type="email" aria-invalid="true" aria-describedby="email-error" value="juan.perez@" /><p class="field-error" id="email-error">Ingresá un email válido</p></div>
-              <div class="field field-full"><label for="celular">Celular</label><input id="celular" type="tel" value="11 5555-1234" /></div>
-              <label class="terms-row"><input type="checkbox" checked /> <span>Acepto los términos y condiciones y la política de privacidad.</span></label>
+              <div class="field"><label for="nombre">Nombre</label><input id="nombre" name="firstName" value="Juan" autocomplete="given-name" required aria-describedby="nombre-error" /><p class="field-error" id="nombre-error" role="alert" hidden>Ingresá tu nombre</p></div>
+              <div class="field"><label for="apellido">Apellido</label><input id="apellido" name="lastName" value="Pérez" autocomplete="family-name" required aria-describedby="apellido-error" /><p class="field-error" id="apellido-error" role="alert" hidden>Ingresá tu apellido</p></div>
+              <div class="field"><label for="dni">DNI</label><input id="dni" name="dni" inputmode="numeric" autocomplete="off" value="30123456" required aria-describedby="dni-error" /><p class="field-error" id="dni-error" role="alert" hidden>El DNI debe tener 7 u 8 números</p></div>
+              <div class="field"><label for="nacimiento">Nacimiento</label><input id="nacimiento" name="birthDate" type="date" autocomplete="bday" required aria-describedby="nacimiento-error" /><p class="field-error" id="nacimiento-error" role="alert" hidden>Tenés que ser mayor de edad</p></div>
+              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" aria-invalid="true" aria-describedby="email-error" value="juan.perez@" required /><p class="field-error" id="email-error" role="alert">Ingresá un email válido</p></div>
+              <div class="field"><label for="celular">Celular</label><input id="celular" name="phone" type="tel" autocomplete="tel" value="11 5555-1234" required aria-describedby="celular-error" /><p class="field-error" id="celular-error" role="alert" hidden>Ingresá un celular de 10 dígitos sin 0 ni 15</p></div>
+              <div class="terms-field field-full"><label class="terms-row"><input id="terms" name="terms" type="checkbox" checked required aria-describedby="terms-error" /> <span>Acepto los términos y condiciones y la política de privacidad.</span></label><p class="field-error" id="terms-error" role="alert" hidden>Tenés que aceptar los términos</p></div>
             </div>
-            <div class="form-actions desktop-actions"><a class="btn btn-secondary" href="/views/planes.html">Volver</a><span class="disabled-message">Completá los campos con error para continuar</span><button class="btn btn-disabled" type="button" disabled>Continuar al pago</button></div>
+            <div class="form-actions desktop-actions"><a class="btn btn-secondary" href="/views/planes.html">Volver</a><span class="disabled-message">Completá los campos para continuar</span><button class="btn btn-disabled" type="submit" disabled>Continuar al pago</button></div>
           </form>
         </section>
         <aside class="checkout-aside summary-card">
           <h2 class="summary-title">Resumen</h2>
           <div class="summary-line"><span>Seguro</span><strong>Celular</strong></div>
-          <div class="summary-line"><span>Equipo</span><strong>Samsung Galaxy A55</strong></div>
-          <div class="summary-line"><span>Plan</span><strong>Plus</strong></div>
+          <div class="summary-line"><span>Equipo</span><strong data-output="device">Samsung Galaxy A55</strong></div>
+          <div class="summary-line"><span>Plan</span><strong data-output="plan">Plus</strong></div>
           <div class="summary-rule"></div>
-          <div class="summary-line"><span>Total mensual</span><strong>$ 3.000</strong></div>
-          <p class="summary-note">◯ Contratación 100% online · cancelás cuando quieras</p>
+          <div class="summary-line"><span>Total mensual</span><strong data-output="monthly-price">$ 3.000</strong></div>
+          <p class="summary-note"><svg class="summary-security-icon" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 1.5 17 4v5.3c0 4.1-2.9 7.6-7 9.2-4.1-1.6-7-5.1-7-9.2V4l7-2.5Z"/><path d="m6.8 9.6 2.1 2.1 4.4-4.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/></svg><span>Contratación 100% online · cancelás cuando quieras</span></p>
         </aside>
       </div>
     </main>
-    <div class="mobile-actionbar"><button class="btn btn-disabled" type="button" disabled>Continuar al pago</button><span class="disabled-message">El botón se habilita cuando el formulario es válido</span></div>
+    <div class="mobile-actionbar"><button class="btn btn-disabled" type="submit" form="customer-form" disabled>Continuar al pago</button><span class="disabled-message">Completá los campos para continuar</span></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

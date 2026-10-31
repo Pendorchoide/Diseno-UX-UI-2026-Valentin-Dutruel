@@ -28,6 +28,10 @@
   line-height: 1.08;
 }
 
+.catalog-copy h1 span {
+  display: block;
+}
+
 .catalog-copy > p {
   max-width: 600px;
   margin: 0;
@@ -103,8 +107,18 @@
   font-size: 13px;
 }
 
-.product-price {
+.product-info .product-price {
   color: var(--primary);
+}
+
+.product-info .product-availability {
+  width: fit-content;
+  border-radius: 999px;
+  padding: 3px 8px;
+  background: var(--primary-50);
+  color: var(--primary-700);
+  font-size: 10px;
+  font-weight: 700;
 }
 
 .catalog-benefits {
@@ -161,6 +175,23 @@
   border-radius: 12px;
   padding: 24px;
   background: white;
+}
+
+.quote-layout .checkout-form {
+  display: flex;
+  min-height: 410px;
+  flex-direction: column;
+  padding: 28px;
+}
+
+.quote-layout .form-actions {
+  margin-top: auto;
+}
+
+.quote-layout .form-actions .btn {
+  min-width: 180px;
+  min-height: 56px;
+  font-size: 16px;
 }
 
 .summary-card {
@@ -283,10 +314,20 @@
 }
 
 .summary-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
   margin: 8px 0 0;
   color: var(--muted);
   font-size: 11px;
   line-height: 1.5;
+}
+
+.summary-security-icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  color: var(--success);
 }
 
 .security-note {
@@ -299,6 +340,13 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
+}
+
+.plan-selection {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  background: white;
 }
 
 .plan-card {
@@ -388,7 +436,15 @@
 }
 
 .coverage-check {
+  display: grid;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  place-items: center;
+  border-radius: 50%;
+  background: #e6f7ef;
   color: var(--success);
+  font-size: 11px;
   font-weight: 800;
 }
 
@@ -396,8 +452,25 @@
   color: #94a3b8;
 }
 
+.coverage-missing b {
+  display: grid;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  place-items: center;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
 .plan-aside {
   margin-top: 0;
+}
+
+.plan-aside .summary-line:has([data-output="monthly-price"]) strong {
+  font-size: 24px;
+  font-weight: 800;
 }
 
 .plan-footnote {
@@ -636,7 +709,7 @@
   }
 
   .catalog-mobile-copy p {
-    margin: 0 0 18px;
+    margin: 0 0 6px;
     color: var(--muted);
     font-size: 14px;
     line-height: 1.5;
@@ -646,7 +719,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-top: 16px;
+    margin-top: 12px;
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 14px 16px;
@@ -699,7 +772,7 @@
   }
 
   .page-heading {
-    margin: 0 0 16px;
+    margin: 0 0 12px;
   }
 
   .page-heading h1 {
@@ -717,12 +790,20 @@
     background: transparent;
   }
 
+  .quote-layout .checkout-form {
+    min-height: 0;
+  }
+
   .form-grid {
     gap: 16px 12px;
   }
 
   .quote-grid > :nth-child(3),
   .quote-grid .age-field {
+    grid-column: 1 / -1;
+  }
+
+  .quote-grid > :nth-child(-n + 2) {
     grid-column: 1 / -1;
   }
 
@@ -747,6 +828,11 @@
 
   .customer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .plan-selection {
+    border-radius: 14px;
+    padding: 14px;
   }
 
   .customer-heading,

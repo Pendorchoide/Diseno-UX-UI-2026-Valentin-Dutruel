@@ -1,6 +1,6 @@
-# Cubrí Seguros · Hito 1
+# Cubrí Seguros · Flujo de contratación
 
-Maquetado estático y responsive del checkout de seguro para celular. Cada pantalla tiene su propio HTML; el alcance de este hito no incluye navegación dinámica, validaciones ni lógica de pago.
+Checkout responsive de seguro para celular, con una página HTML independiente por pantalla y JavaScript vanilla para el flujo completo.
 
 ## Requisitos
 
@@ -31,6 +31,7 @@ Vite muestra la URL local al iniciar. La portada está en `index.html`; las dem�
 ## Verificación de producción
 
 ```bash
+npm test
 npm run build
 npm run preview
 ```
@@ -38,3 +39,11 @@ npm run preview
 ## Estilos
 
 Tailwind CSS v4 y Basecoat se integran mediante Vite. Los estilos propios están separados en `src/styles/`: tokens, base, componentes, layout y páginas.
+
+## Flujo y reglas
+
+- Los datos del equipo, plan y titular se comparten entre pantallas y sobreviven a una recarga mediante `localStorage`.
+- Las cuotas se calculan desde `public/data/planes.json` con la tasa anual del plan y el factor por antigüedad definidos en el PDF.
+- Los formularios muestran errores al salir del campo, bloquean el avance con datos inválidos y enfocan el primer error al intentar continuar.
+- El pago es una simulación local: `4000 0000 0000 0002` genera el rechazo; cualquier otro número válido de 16 dígitos se aprueba. No se envían ni guardan datos de tarjeta o CVV.
+- La pantalla de éxito genera un número de póliza de prueba y permite descargar una constancia de simulación sin validez legal.

@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#f5f7fb" />
     <title>Cotizá tu seguro | Cubrí</title>
   </head>
-  <body>
+  <body data-step="1">
     <div class="status-bar" aria-hidden="true"><span>9:41</span><span class="status-signal">5G<img src="/src/assets/figma/signal-mobile.svg" alt="" /></span></div>
     <header class="site-header">
       <a class="brand" href="/" aria-label="Cubrí, inicio"><span class="brand-mark" aria-hidden="true"><img src="/src/assets/figma/logo-mark.svg" alt="" /></span><span>Cubrí</span></a>
@@ -23,32 +23,33 @@
       </ol></nav>
       <div class="checkout-layout quote-layout">
         <section class="checkout-main">
-          <form class="checkout-form">
+          <form class="checkout-form" id="quote-form" novalidate>
             <div class="form-grid quote-grid">
-              <div class="field"><label for="marca">Marca</label><select id="marca" name="marca"><option>Samsung</option><option>Apple</option><option>Motorola</option></select></div>
-              <div class="field"><label for="modelo">Modelo</label><input id="modelo" name="modelo" value="Galaxy A55" /></div>
-              <div class="field"><label for="valor">Valor del equipo</label><div class="prefix-field"><span>$</span><input id="valor" name="valor" value="600.000" /></div><p class="field-hint">Entre $100.000 y $2.500.000</p></div>
+              <div class="field"><label for="marca">Marca</label><select id="marca" name="marca" required><option value="Samsung">Samsung</option><option value="Apple">Apple</option><option value="Motorola">Motorola</option></select><p class="field-error" id="marca-error" role="alert" hidden>Elegí una marca</p></div>
+              <div class="field"><label for="modelo">Modelo</label><input id="modelo" name="modelo" value="Galaxy A55" required aria-describedby="modelo-error" /><p class="field-error" id="modelo-error" role="alert" hidden>Ingresá el modelo del equipo</p></div>
+              <div class="field"><label for="valor">Valor del equipo</label><div class="prefix-field"><span>$</span><input id="valor" name="valor" inputmode="numeric" value="600.000" required aria-describedby="valor-hint valor-error" /></div><p class="field-hint" id="valor-hint">Entre $100.000 y $2.500.000</p><p class="field-error" id="valor-error" role="alert" hidden>El valor debe estar entre $100.000 y $2.500.000</p></div>
               <fieldset class="field age-field"><legend>Antigüedad</legend><div class="age-options">
-                <label class="age-option"><input type="radio" name="antiguedad" checked /><span>Menos de 1 año</span></label>
-                <label class="age-option"><input type="radio" name="antiguedad" /><span>1 a 2 años</span></label>
-                <label class="age-option"><input type="radio" name="antiguedad" /><span>+2 años</span></label>
-              </div></fieldset>
+                <label class="age-option"><input type="radio" name="antiguedad" value="menos-1" checked /><span>Menos de 1 año</span></label>
+                <label class="age-option"><input type="radio" name="antiguedad" value="1-2" /><span>1 a 2 años</span></label>
+                <label class="age-option"><input type="radio" name="antiguedad" value="mas-2" /><span>+2 años</span></label>
+              </div><p class="field-error" id="antiguedad-error" role="alert" hidden>Indicá la antigüedad</p></fieldset>
             </div>
-            <div class="form-actions desktop-actions"><span></span><a class="btn" href="/views/planes.html">Ver planes</a></div>
+            <div class="form-actions desktop-actions"><span></span><button class="btn" type="submit">Ver planes</button></div>
           </form>
         </section>
         <aside class="checkout-aside summary-card">
           <h2 class="summary-title">Resumen</h2>
           <div class="summary-line"><span>Seguro</span><strong>Celular</strong></div>
-          <div class="summary-line"><span>Equipo</span><strong>Samsung Galaxy A55</strong></div>
-          <div class="summary-line"><span>Valor</span><strong>$ 600.000</strong></div>
+          <div class="summary-line"><span>Equipo</span><strong data-output="device">Samsung Galaxy A55</strong></div>
+          <div class="summary-line"><span>Valor</span><strong data-output="insured-value">$ 600.000</strong></div>
           <div class="summary-rule"></div>
-          <p class="summary-note">Completá los datos del equipo para ver el precio.</p>
-          <p class="summary-note">◯ Contratación 100% online · cancelás cuando quieras</p>
+          <p class="summary-note" data-output="quote-message" aria-live="polite">Completá los datos del equipo para ver el precio.</p>
+          <p class="summary-note"><svg class="summary-security-icon" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 1.5 17 4v5.3c0 4.1-2.9 7.6-7 9.2-4.1-1.6-7-5.1-7-9.2V4l7-2.5Z"/><path d="m6.8 9.6 2.1 2.1 4.4-4.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/></svg><span>Contratación 100% online · cancelás cuando quieras</span></p>
+          <p class="field-error" data-plan-load-error role="alert" hidden>No se pudieron cargar los planes. Actualizá la página para volver a intentar.</p>
         </aside>
       </div>
     </main>
-    <div class="mobile-actionbar"><a class="btn" href="/views/planes.html">Ver planes</a></div>
+    <div class="mobile-actionbar"><button class="btn" type="submit" form="quote-form">Ver planes</button></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
