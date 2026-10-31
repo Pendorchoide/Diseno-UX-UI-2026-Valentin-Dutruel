@@ -1,6 +1,6 @@
-# Cubrí Seguros · Flujo de contratación
+# Cubrí Seguros · Flujo de contratación (TP 5)
 
-Checkout responsive de seguro para celular, con una página HTML independiente por pantalla y JavaScript vanilla para el flujo completo.
+Checkout responsive de seguro para celular realizado para la materia Diseño UX-UI
 
 ## Requisitos
 
@@ -47,3 +47,8 @@ Tailwind CSS v4 y Basecoat se integran mediante Vite. Los estilos propios están
 - Los formularios muestran errores al salir del campo, bloquean el avance con datos inválidos y enfocan el primer error al intentar continuar.
 - El pago es una simulación local: `4000 0000 0000 0002` genera el rechazo; cualquier otro número válido de 16 dígitos se aprueba. No se envían ni guardan datos de tarjeta o CVV.
 - La pantalla de éxito genera un número de póliza de prueba y permite descargar una constancia de simulación sin validez legal.
+
+## Prueba en Netlify
+
+Si se desea probar el proyecto puede hacerlo en el siguiente enlace:
+https://seguros-ux-ui.netlify.app/

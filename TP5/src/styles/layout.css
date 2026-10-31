@@ -106,13 +106,19 @@
   }
 
   .stepper {
+    display: flex;
     order: -1;
     width: calc(100% + 40px);
     height: 44px;
+    align-items: center;
     margin: 0 -20px 12px;
     border-width: 0 0 1px;
     border-radius: 0;
     padding: 0 12px;
+  }
+
+  .stepper ol {
+    width: 100%;
   }
 
   .step-item {
