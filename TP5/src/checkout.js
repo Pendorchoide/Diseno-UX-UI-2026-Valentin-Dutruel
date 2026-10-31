@@ -160,7 +160,7 @@ function actualizarSalidas() {
     'customer-name': nombreCompleto,
     'first-name': solicitud.titular.nombre,
     email: solicitud.titular.email,
-    'policy-number': solicitud.poliza ?? 'POL-2026-000123',
+    'policy-number': solicitud.poliza ?? '—',
     'policy-date': fechaPoliza,
     'payment-error': solicitud.pago.motivo
       ? `${solicitud.pago.motivo}. Tus datos quedaron guardados; podés reintentar o cambiar el medio de pago.`

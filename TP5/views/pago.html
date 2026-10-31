@@ -36,11 +36,11 @@
             </div></fieldset>
             <div class="payment-grid">
               <div class="field card-number-field"><label for="tarjeta">Número de tarjeta</label><input id="tarjeta" name="cardNumber" inputmode="numeric" autocomplete="cc-number" value="4111 1111 1111 1111" required aria-describedby="tarjeta-error" /><p class="field-error" id="tarjeta-error" role="alert" hidden>Número de tarjeta inválido</p></div>
-              <div class="field desktop-only"><label for="titular">Titular</label><input id="titular" name="cardholder" autocomplete="cc-name" value="JUAN PEREZ" required aria-describedby="titular-error" /><p class="field-error" id="titular-error" role="alert" hidden>Ingresá el nombre del titular</p></div>
+              <div class="field"><label for="titular">Titular</label><input id="titular" name="cardholder" autocomplete="cc-name" value="JUAN PEREZ" required aria-describedby="titular-error" /><p class="field-error" id="titular-error" role="alert" hidden>Ingresá el nombre del titular</p></div>
               <div class="field"><label for="vencimiento">Vencimiento</label><input id="vencimiento" name="expiry" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/AA" value="12/28" required aria-describedby="vencimiento-error" /><p class="field-error" id="vencimiento-error" role="alert" hidden>Vencimiento inválido</p></div>
               <div class="field"><label for="cvv">CVV</label><input id="cvv" name="cvv" inputmode="numeric" autocomplete="cc-csc" placeholder="123" required aria-describedby="cvv-error" /><p class="field-error" id="cvv-error" role="alert" hidden>CVV inválido</p></div>
             </div>
-            <p class="simulation-note"><span class="desktop-only">Simulación: no se procesan pagos reales. Usá la tarjeta de prueba 4111 1111 1111 1111 → aprobado · 4000 0000 0000 0002 → rechazado.</span><span class="mobile-only">Simulación: no se procesan pagos reales. Usá la tarjeta de prueba 4111...</span></p>
+            <p class="simulation-note">Simulación: no se procesan pagos reales. Usá 4111 1111 1111 1111 para aprobar o 4000 0000 0000 0002 para rechazar.</p>
             <div class="form-actions desktop-actions"><a class="btn btn-secondary" href="/views/datos.html">Volver</a><button class="btn" type="submit">Pagar y contratar</button></div>
           </form>
         </section>
