@@ -9,6 +9,7 @@ import {
   validarMarca,
   validarModelo,
   validarNacimiento,
+  validarNombre,
   validarTarjeta,
   validarTerminos,
   validarValor,
@@ -19,8 +20,13 @@ test('valida marca, modelo, monto y antigüedad', () => {
   assert.equal(validarMarca('Samsung'), null);
   assert.match(validarMarca(''), /marca/);
   assert.equal(validarModelo('Galaxy A55'), null);
+  assert.equal(validarModelo('A'.repeat(40)), null);
   assert.match(validarModelo('X'), /modelo/);
+  assert.match(validarModelo('A'.repeat(41)), /modelo/);
   assert.equal(validarValor('600.000'), null);
+  assert.equal(validarValor('100.000'), null);
+  assert.equal(validarValor('2.500.000'), null);
+  assert.notEqual(validarValor('99.999'), null);
   assert.notEqual(validarValor('abc600.000'), null);
   assert.notEqual(validarValor('2.500.001'), null);
   assert.equal(validarAntiguedad('menos-1'), null);
@@ -29,6 +35,8 @@ test('valida marca, modelo, monto y antigüedad', () => {
 
 test('valida identidad y datos de contacto', () => {
   const today = new Date(2026, 9, 30);
+  assert.equal(validarNombre('Ana'), null);
+  assert.notEqual(validarNombre('A'), null);
   assert.equal(validarDni('30123456'), null);
   assert.notEqual(validarDni('30.123.456'), null);
   assert.equal(validarNacimiento('30/10/2008', today), null);
