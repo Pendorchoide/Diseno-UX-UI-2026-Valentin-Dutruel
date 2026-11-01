@@ -53,3 +53,9 @@ Tailwind CSS v4 y Basecoat se integran mediante Vite. Los estilos propios están
 
 Si se desea probar el proyecto puede hacerlo en el siguiente enlace:
 https://seguros-ux-ui.netlify.app/
+
+## Comentarios y consideraciones
+
+Se decidio que algunos datos aparezcan pre cargados para facilitar la prueba de del prototipo. En un escenario real estos deberían estar vacios.
+
+Como extras se incorporó el setup con Vite y deploy continuo con Netlify conectado a GitHub, la persistencia de datos en `localStorage`, el modo oscuro y las máscaras de los campos de pago: el número de tarjeta se agrupa de a cuatro dígitos y el vencimiento agrega la barra automáticamente.
