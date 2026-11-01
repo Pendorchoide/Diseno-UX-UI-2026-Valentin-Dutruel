@@ -42,5 +42,5 @@ svg {
 
 ::selection {
   color: var(--primary-700);
-  background: #e0e7ff;
+  background: var(--selection-bg);
 }

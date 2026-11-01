@@ -50,7 +50,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 24px;
-    background: white;
+    background: var(--surface);
     color: var(--text);
     font-size: 14px;
     font-weight: 600;
@@ -70,9 +70,10 @@
     display: flex;
     height: 64px;
     gap: 16px;
+    justify-content: space-between;
     border-bottom: 1px solid var(--border);
     padding: 0 20px;
-    background: white;
+    background: var(--surface);
     font-size: 16px;
     font-weight: 700;
   }
@@ -81,6 +82,38 @@
     font-size: 23px;
     font-weight: 400;
     line-height: 1;
+  }
+
+  .mobile-view-header .brand {
+    margin-right: auto;
+  }
+
+  .theme-toggle-desktop {
+    display: none;
+  }
+
+  .theme-toggle-mobile {
+    display: inline-flex;
+    width: 40px;
+    min-height: 40px;
+    flex: 0 0 40px;
+    padding: 0;
+  }
+
+  .theme-toggle-mobile .theme-toggle-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+  }
+
+  .result-card .theme-toggle-mobile {
+    position: absolute;
+    top: 12px;
+    right: 12px;
   }
 
   .catalog-page,
@@ -154,7 +187,7 @@
     gap: 10px;
     border-top: 1px solid var(--border);
     padding: 16px 20px 12px;
-    background: white;
+    background: var(--surface);
   }
 
   .mobile-actionbar .btn {

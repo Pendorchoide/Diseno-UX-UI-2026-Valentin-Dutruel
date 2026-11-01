@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Elegí qué querés asegurar y contratá tu seguro online en pocos minutos." />
     <meta name="theme-color" content="#f5f7fb" />
+    <script>
+      try {
+        if (localStorage.getItem('cubri-theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+      } catch (error) {
+        console.warn('No se pudo leer la preferencia del tema.', error);
+      }
+    </script>
     <title>Seguro de celular | Cubrí</title>
   </head>
   <body>

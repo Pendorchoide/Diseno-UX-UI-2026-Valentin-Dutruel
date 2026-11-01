@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f5f7fb" />
+    <script>
+      try {
+        if (localStorage.getItem('cubri-theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+      } catch (error) {
+        console.warn('No se pudo leer la preferencia del tema.', error);
+      }
+    </script>
     <title>Elegí tu plan | Cubrí</title>
   </head>
   <body data-step="2">

@@ -45,6 +45,7 @@ Tailwind CSS v4 y Basecoat se integran mediante Vite. Los estilos propios están
 - Los datos del equipo, plan y titular se comparten entre pantallas y sobreviven a una recarga mediante `localStorage`.
 - Las cuotas se calculan desde `public/data/planes.json` con la tasa anual del plan y el factor por antigüedad definidos en el PDF.
 - Los formularios muestran errores al salir del campo, bloquean el avance con datos inválidos y enfocan el primer error al intentar continuar.
+- El tema claro/oscuro se puede alternar desde la navegación y la preferencia se conserva entre pantallas.
 - El pago es una simulación local: `4000 0000 0000 0002` genera el rechazo; cualquier otro número válido de 16 dígitos se aprueba. No se envían ni guardan datos de tarjeta o CVV.
 - La pantalla de éxito genera un número de póliza de prueba y permite descargar una constancia de simulación sin validez legal.
 
